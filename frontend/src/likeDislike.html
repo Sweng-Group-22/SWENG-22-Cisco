@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rating</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        background-color: inherit; 
+      }
+      div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:50px;
+      }
+      button{
+        border-radius: 12px;
+        border: none;
+        margin: 20px;
+        cursor: pointer;
+        appearance: auto;
+        background-color: inherit; 
+        transition: transform .1s ease-in-out;
+      }
+      button:hover{
+        transform: scale(0.90);     
+      }
+      img{
+        width: 70px;
+        height: 70px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <button id="like_button" type="button" onclick="toggleLike(like_clicked, dislike_clicked)">
+        <img src="https://i.ibb.co/vZ2QnWJ/25297.png" border="0"/>
+        <script>
+            const button1 = document.getElementById("like_button");
+            var like_clicked = 1;
+            button1.addEventListener('click', ()=>{ like_clicked = like_clicked * (-1); })
+        </script>
+      </button>
+        
+      <button id="dislike_button" type="button" onclick="toggleDislike(like_clicked, dislike_clicked)">
+          <img src="https://i.ibb.co/vZ2QnWJ/25297.png" border="0" style="transform: rotate(180deg);"/>
+          <script>
+              const button2 = document.getElementById("dislike_button");
+              var dislike_clicked = 1;
+              button2.addEventListener('click', ()=>{ dislike_clicked = dislike_clicked * (-1); })
+          </script>
+      </button>
+    </div>
+
+    <script>
+        function toggleLike(like_clicked, dislike_clicked) {
+           if (like_clicked > 0) {  /* like */
+                alert("liked!"); 
+           }
+           else {  /* unlike */
+                alert("unliked!");
+           }
+        }
+
+        function toggleDislike(like_clicked, dislike_clicked) {
+           if (dislike_clicked > 0) {  
+                alert("disliked!");           
+           }
+           else { 
+                alert("not disliked!");
+           }
+        }
+    </script>
+  </body>
+</html>

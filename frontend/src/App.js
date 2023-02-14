@@ -1,8 +1,10 @@
+import Popup from "./components/Popup";
 
 
 function App() {
   return (
     <>
+    <Popup />
     
     </>
   );

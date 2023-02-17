@@ -1,0 +1,21 @@
+.container {
+    background-color: #16ed98;
+    height: 75%;
+    width: 62.5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 76px;
+    
+}
+.c2{
+    background-color: aquamarine;
+    height: 500px;
+    width: 200px;
+}
+
+.textarea{
+    height: 100px;
+    resize: none;
+}

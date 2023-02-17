@@ -8,6 +8,7 @@ public class Sweng22CiscoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Sweng22CiscoApplication.class, args);
+		System.out.println("Hello world!");
 	}
 
 }

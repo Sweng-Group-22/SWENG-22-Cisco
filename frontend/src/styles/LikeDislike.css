@@ -10,6 +10,8 @@ img{
     appearance: auto;
     background-color: inherit; 
     transition: transform .1s ease-in-out;
+
+    font-weight: bold;
 }
 .like:hover {
     transform: scale(0.90);    
@@ -22,6 +24,8 @@ img{
     appearance: auto;
     background-color: inherit; 
     transition: transform .1s ease-in-out;
+
+    font-weight: bold;
 }
 .dislike:hover {
     transform: scale(0.90);    

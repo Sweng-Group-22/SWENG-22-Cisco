@@ -7,30 +7,35 @@ export default function LikeDislike() {
   const [likeActive, setLikeActive] = useState(false)
   const [dislikeActive, setDislikeActive] = useState(false)
 
+  const [likeCount, setLikeCount] = useState(54) // change 54 to initial value of likes when backend is done with this functionality
+  const [dislikeCount, setDislikeCount] = useState(17) // change 17 to initial value of dislikes when backend is done with this functionality
+
   function likeFunction(){
-    if(likeActive){
+    if(likeActive){                // unlike
       setLikeActive(false)
-      alert('unliked')
-    }
-    else{
+      setLikeCount(likeCount-1)
+    }                            
+    else{                          // like
       setLikeActive(true)
-      alert('liked')
+      setLikeCount(likeCount+1)
       if(dislikeActive){
         setDislikeActive(false)
+        setDislikeCount(dislikeCount-1)
       }
     }
   }
 
   function dislikeFunction(){
-    if(dislikeActive){
+    if(dislikeActive){             // undo dislike
       setDislikeActive(false)
-      alert('not disliked')
+      setDislikeCount(dislikeCount-1)
     }
-    else{
+    else{                          // dislike
       setDislikeActive(true)
-      alert('disliked')
+      setDislikeCount(dislikeCount+1)
       if(likeActive){
         setLikeActive(false)
+        setLikeCount(likeCount-1)
       }
     }
   }
@@ -40,10 +45,12 @@ export default function LikeDislike() {
       <div className='LikeDislike'>
       <button className='like' onClick={likeFunction}>
         <img src="https://i.ibb.co/vZ2QnWJ/25297.png"/>
+        {likeCount}
       </button>
         
       <button className='dislike' onClick={dislikeFunction}>
         <img src="https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png"/>
+        {dislikeCount}
       </button>
       </div>
     </>

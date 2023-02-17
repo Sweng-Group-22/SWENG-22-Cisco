@@ -1,0 +1,32 @@
+img{
+    width: 70px;
+    height: 70px;
+}
+
+.like {
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+    appearance: auto;
+    background-color: inherit; 
+    transition: transform .1s ease-in-out;
+
+    font-weight: bold;
+}
+.like:hover {
+    transform: scale(0.90);    
+}
+
+.dislike {
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+    appearance: auto;
+    background-color: inherit; 
+    transition: transform .1s ease-in-out;
+
+    font-weight: bold;
+}
+.dislike:hover {
+    transform: scale(0.90);    
+}

@@ -1,0 +1,35 @@
+.circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #16ed98;
+    
+}
+
+.circle:hover > .plus * {
+    background-color: #fff;
+    transform:scale(.98);
+}
+
+.vertical {
+    background-color: grey;
+    width: 40px;
+    height: 10px;
+    rotate: 90deg;
+    position: relative;
+    top: 5px;
+    
+}
+.horizontal {
+    background-color: grey;
+    width: 40px;
+    height: 10px;
+    position: relative;
+    bottom: 5px;
+}

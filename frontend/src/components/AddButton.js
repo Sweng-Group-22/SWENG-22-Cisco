@@ -17,7 +17,7 @@ export default function AddButton() {
                 <div className='horizontal'/>
             </div>
         </div>
-        {showPopup && <Popup/>}
+        {showPopup && <Popup show={showPopup} />}
     </>
   )
 }

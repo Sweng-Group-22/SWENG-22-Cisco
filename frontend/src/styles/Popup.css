@@ -1,4 +1,7 @@
-.container {
+.popup-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     background-color: #16ed98;
     height: 75%;
     width: 62.5%;
@@ -8,14 +11,25 @@
     transform: translate(-50%, -50%);
     border-radius: 76px;
     
+    
 }
-.c2{
-    background-color: aquamarine;
-    height: 500px;
-    width: 200px;
+.popup-label {
+    display: block;
+}
+.popup-textarea {
+    display: block;
+    height: 300px;
+    width: 300px;
+
+    /* position: relative; */
+}
+.popup-buttons {
+    display: flex;
+    
 }
 
-.textarea{
-    height: 100px;
-    resize: none;
+
+.english {
+    text-align: center;
 }
+

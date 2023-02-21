@@ -25,11 +25,11 @@
 }
 .popup-buttons {
     display: flex;
-    
+    justify-content: space-around;
 }
 
 
-.english {
+.popup-english-phrase {
     text-align: center;
 }
 

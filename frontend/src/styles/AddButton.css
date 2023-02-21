@@ -1,4 +1,4 @@
-.circle {
+.add-button-circle {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,12 +12,12 @@
     
 }
 
-.circle:hover > .plus * {
+.add-button-circle:hover > .plus * {
     background-color: #fff;
     transform:scale(.98);
 }
 
-.vertical {
+.add-button-vertical-bar {
     background-color: grey;
     width: 40px;
     height: 10px;
@@ -26,7 +26,7 @@
     top: 5px;
     
 }
-.horizontal {
+.add-button-horizontal-bar {
     background-color: grey;
     width: 40px;
     height: 10px;

@@ -1,0 +1,25 @@
+.letter-line-container-1{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    width: 650px;
+    background-color: yellow;
+    font-size: 20pt;
+    text-align: center;
+    border-radius: 40px;
+    
+}
+.letter-line-container-items{
+    
+}
+.letter-line-container-2{
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    width: 650px;
+    background-color: yellow;
+    font-size: 20pt;
+    text-align: center;
+    border-radius: 40px;
+    
+}

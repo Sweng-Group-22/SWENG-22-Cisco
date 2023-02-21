@@ -1,13 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Popup.css'
 
 
-export default function Popup(show) {
-
-    function closePopup(){
-        show=false;
-    }
-
+export default function Popup() {
 
   return (
     <>
@@ -22,7 +17,7 @@ export default function Popup(show) {
         <label className='popup-label'>Translation:</label>
         <textarea className='popup-textarea' />
         <div className='popup-buttons'>
-          <button onClick={closePopup}>Cancel</button>
+          <button>Cancel</button>
           <button type='submit'>Submit</button>
         </div>
       </div>
@@ -30,4 +25,6 @@ export default function Popup(show) {
     
     </>
   )
+  
+  return null
 }

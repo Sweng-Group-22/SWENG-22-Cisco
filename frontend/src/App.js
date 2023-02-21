@@ -11,24 +11,18 @@ import AddButton from './components/AddButton';
 function App() {
   return (
     <>
-      
-      <div className="page-container">
-      <div className="content-wrap">
-        
-        <Routes>
-          <Route path='/'>
-            <Route index element={<Home />}/>
-            <Route path='word' element={<WordTranslations/>}></Route>
-            <Route path='browse' element={<LetterLine/>}>
-              {/* <Route path='' element={<AddButton/>}></Route> */}
-            </Route>
-            
+      <Routes>
+        <Route path='/'>
+          <Route index element={<Home />}/>
+          <Route path='word' element={<WordTranslations/>}></Route>
+          <Route path='browse' element={<LetterLine/>}>
+            {/* <Route path='' element={<AddButton/>}></Route> */}
           </Route>
-        </Routes>
-        
-      </div>
-        <Footer/>
-      </div>
+          
+        </Route>
+      </Routes>
+
+      
       {/* <LetterLine/> */}
       
     </>

@@ -2,8 +2,11 @@
     color: black;
     background-color: bisque;
     border-radius: 0px;
-    position: relative;
     width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .content {

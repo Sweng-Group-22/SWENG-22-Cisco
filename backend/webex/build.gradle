@@ -16,6 +16,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.mongodb:mongodb-driver-sync:4.9.0'
 }
 
 tasks.named('test') {

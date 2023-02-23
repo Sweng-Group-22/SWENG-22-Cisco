@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import LetterLine from './components/LetterLine';
 import AddButton from './components/AddButton';
 import Hitesh from './pages/Hitesh';
+import Waldron from './pages/Waldron';
 function App() {
   return (
     <>
@@ -14,10 +15,11 @@ function App() {
         <Route path='/'>
           <Route index element={<Home />}/>
           <Route path='word' element={<WordTranslations/>}></Route>
-          <Route path='hitesh' element={<Hitesh/>}></Route>
           <Route path='browse' element={<LetterLine/>}>
             {/* <Route path='' element={<AddButton/>}></Route> */}
           </Route>
+          <Route path='hitesh' element={<Hitesh/>}></Route>
+          <Route path='waldron' element={<Waldron/>}></Route>
         </Route>
       </Routes>
 

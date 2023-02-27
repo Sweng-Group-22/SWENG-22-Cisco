@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../components/Footer'
+import Search from '../components/Search';
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
           <tt>⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿</tt><br></br>
           <tt>⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿</tt><br></br>
         </pre>
-
+        
         <Footer/>
     </>
   )

@@ -14,8 +14,9 @@ function App() {
         <Route path='/'>
           <Route index element={<Home />}/>
           <Route path='word' element={<WordTranslations/>}></Route>
-          <Route path='browse' element={<LetterLine/>}>
-            {/* <Route path='' element={<AddButton/>}></Route> */}
+          <Route path='browse'>
+            <Route index element={<LetterLine/>} />
+            <Route path='*' element={<AddButton/>}></Route>
           </Route>
         </Route>
       </Routes>

@@ -6,35 +6,35 @@ export default function LetterLine() {
     <>
         <div className='letter-line-container-1'>
             <div className='letter-line-container-items'>
-                <Link to={'/A'}> A </Link>
+                <Link to={'A'}> A </Link>
                 <Link to={'B'}> B </Link>
                 <Link to={'C'}> C </Link>
-                <Link to={'browse/D'}> D </Link>
-                <Link to={'browse/E'}> E </Link>
-                <Link to={'browse/F'}> F </Link>
-                <Link to={'browse/G'}> G </Link>
-                <Link to={'browse/H'}> H </Link>
-                <Link to={'browse/I'}> I </Link>
-                <Link to={'browse/J'}> J </Link>
-                <Link to={'browse/K'}> K </Link>
-                <Link to={'browse/L'}> L </Link>
-                <Link to={'browse/M'}> M </Link>
-                <Link to={'browse/N'}> N </Link>
-                <Link to={'browse/O'}> O </Link>
-                <Link to={'browse/P'}> P </Link>
-                <Link to={'browse/Q'}> Q </Link>
-                <Link to={'browse/R'}> R </Link>
-                <Link to={'browse/S'}> S </Link>
-                <Link to={'browse/T'}> T </Link>
-                <Link to={'browse/U'}> U </Link>
-                <Link to={'browse/V'}> V </Link>
+                <Link to={'D'}> D </Link>
+                <Link to={'E'}> E </Link>
+                <Link to={'F'}> F </Link>
+                <Link to={'G'}> G </Link>
+                <Link to={'H'}> H </Link>
+                <Link to={'I'}> I </Link>
+                <Link to={'J'}> J </Link>
+                <Link to={'K'}> K </Link>
+                <Link to={'L'}> L </Link>
+                <Link to={'M'}> M </Link>
+                <Link to={'N'}> N </Link>
+                <Link to={'O'}> O </Link>
+                <Link to={'P'}> P </Link>
+                <Link to={'Q'}> Q </Link>
+                <Link to={'R'}> R </Link>
+                <Link to={'S'}> S </Link>
+                <Link to={'T'}> T </Link>
+                <Link to={'U'}> U </Link>
+                <Link to={'V'}> V </Link>
             </div>
         </div>
         <div className='letter-line-container-2'>
-            <Link to={'browse/W'}> W </Link>
-            <Link to={'browse/X'}> X </Link>
-            <Link to={'browse/Y'}> Y </Link>
-            <Link to={'browse/Z'}> Z </Link>
+            <Link to={'W'}> W </Link>
+            <Link to={'X'}> X </Link>
+            <Link to={'Y'}> Y </Link>
+            <Link to={'Z'}> Z </Link>
         </div>
     </>
   )

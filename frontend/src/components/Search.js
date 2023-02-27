@@ -4,14 +4,16 @@ import Select from "react-select";
 
 export default function Search(){
     // Manage selected options
-    const [selectedOptions, setSelectedOptions] = useState();
+    const [selectedOptions, setSelectedOptions] = useState({});
     // Array of options
     const optionList = [
-        { value: "red", label: "Red" },
-        { value: "green", label: "Green" },
-        { value: "yellow", label: "Yellow" },
-        { value: "blue", label: "Blue" },
-        { value: "white", label: "White" }
+        { value: "irish", label: "Gaeilge (Irish)" },
+        { value: "english", label: "English" },
+        { value: "spanish", label: "Español (Spanish)" },
+        { value: "french", label: "Français (French)" },
+        { value: "german", label: "Deutsch (German)" },
+        { value: "russian", label: "Русский (Russian)" },
+        { value: "mandarin", label: "普通话 (Mandarin)" }
     ];
     // Function triggered on selection
     function handleSelect(data) {
@@ -19,11 +21,11 @@ export default function Search(){
     }
     return (
         <div className="search">
-            <h2>Choose your color</h2>
+            <h2>Choose your language</h2>
             <div className="dropdown-container">
-                <Select
+                <Select 
                     options={optionList}
-                    placeholder="Select color"
+                    placeholder="Select language"
                     value={selectedOptions}
                     onChange={handleSelect}
                     isSearchable={true}

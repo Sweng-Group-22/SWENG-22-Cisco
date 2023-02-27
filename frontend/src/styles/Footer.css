@@ -1,0 +1,57 @@
+.container {
+    color: black;
+    background-color: bisque;
+    border-radius: 0px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.content {
+    margin: 2%;
+}
+
+.button-group-1 a {
+    color: black;
+    font-size: 30px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    appearance: auto;
+    background-color: inherit; 
+}
+
+
+
+.twitter:hover {
+    color: rgb(29, 161, 242);  
+}
+.linkedin:hover {
+    color: rgb(0, 119, 181);  
+}
+.facebook:hover {
+    color: rgb(66, 103, 178);  
+}
+.youtube:hover {   
+    color: rgb(255, 0, 0); 
+}
+.instagram:hover {  
+    color: rgb(225, 48, 108); 
+}
+
+
+
+.copyright {
+    margin-right: 130px;
+}
+
+.button-group-2 button {
+    margin-right: 30px;
+    cursor: pointer;
+    appearance: auto;
+    background-color: inherit; 
+    border: none;
+}
+

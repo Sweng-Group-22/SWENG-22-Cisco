@@ -1,0 +1,35 @@
+.add-button-circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #16ed98;
+    
+}
+
+.add-button-circle:hover > .plus * {
+    background-color: #fff;
+    transform:scale(.98);
+}
+
+.add-button-vertical-bar {
+    background-color: grey;
+    width: 40px;
+    height: 10px;
+    rotate: 90deg;
+    position: relative;
+    top: 5px;
+    
+}
+.add-button-horizontal-bar {
+    background-color: grey;
+    width: 40px;
+    height: 10px;
+    position: relative;
+    bottom: 5px;
+}

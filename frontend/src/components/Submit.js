@@ -1,21 +1,26 @@
 import React, {useState} from 'react'
 import '../styles/Submit.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SubmitTranslation() {   
 
     const [submitted, setSubmit] = useState(false)
 
     function submitFunction() {
-        //TODO: Integrate with text type feature
-        if(!submitted) {
+        if (!submitted) {
             setSubmit(true)
+            toast("Translation Submitted!")
+        } else {
+            toast("Already Submitted")
         }
     }
 
     return (
         <>
-            <div classname = 'SubmitTranslation'>
-                <button classname = 'submit' onClick = {submitFunction}/>
+            <div className = 'SubmitTranslation'>
+                <button className = 'submit' onClick = {submitFunction}>Submit</button>
+                <ToastContainer />
             </div>
         </>
     )

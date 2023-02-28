@@ -3,7 +3,8 @@ import LikeDislike from "./components/LikeDislike";
 import Footer from "./components/Footer"
 import WordTranslations from './pages/WordTranslations';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home'
+import Home from './pages/Home';
+import Page404 from './pages/404';
 import LetterLine from './components/LetterLine';
 import AddButton from './components/AddButton';
 
@@ -18,6 +19,7 @@ function App() {
             <Route index element={<LetterLine/>} />
             <Route path='*' element={<AddButton/>}></Route>
           </Route>
+          <Route path='*' element={<Page404/>}></Route>
         </Route>
       </Routes>
 

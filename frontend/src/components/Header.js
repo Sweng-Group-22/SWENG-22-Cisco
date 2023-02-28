@@ -50,8 +50,8 @@ export default function Header(){
               </div>
             </div>
           </div>
-	    <a href="#log">Log In</a>
-          <input type="text" placeholder="Search.."/>
+	        <a href="#log">Log In</a>
+          <input type="text" placeholder="Search..."/>
         </div>
       </>
   )

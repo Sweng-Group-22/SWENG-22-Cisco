@@ -1,6 +1,6 @@
 .submit{
     border: 2px solid black;
-    background-color: inherit;
+    background-color: #078855;
     border-radius: 12px;
     margin: 20px;
     cursor: pointer;
@@ -9,12 +9,34 @@
     color: black;
     padding: 14px 28px;
     font-size: 16px;
-    border-color: grey;
-    color: grey;
+    border-color: #078855;
+    color: white;
 }
 
 .submit:hover{
     transform: scale(0.90);
-    background-color: grey;
+    background-color: white;
     color: white;
+    color: #078855;
+}
+
+.translate-box input[type=text] {
+    float: center;
+    padding: 6px;
+    margin-top: 24px;
+    margin-right: 16px;
+    border: none;
+    font-size: 17px;
+}
+
+.translate-box input[type=text] {
+    display: block;
+    text-align: left;
+    width: 33%;
+    margin-top: 12px;
+    padding: 14px;
+}
+   
+.translate-box input[type=text] {
+    border: 1px solid #ccc;  
 }

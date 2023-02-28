@@ -1,6 +1,6 @@
 .container {
     color: black;
-    background-color: bisque;
+    background-color: #21d88f;
     border-radius: 0px;
     width: 100%;
     position: absolute;
@@ -44,10 +44,12 @@
 
 
 .copyright {
+    color: black;
     margin-right: 130px;
 }
 
 .button-group-2 button {
+    color: black;
     margin-right: 30px;
     cursor: pointer;
     appearance: auto;

@@ -51,8 +51,8 @@ export default function Header(){
               </div>
             </div>
           </div>
-	    {/* <Link to="log">Log In</Link> */}
-          <input type="text" placeholder="Search.."/>
+	        {/* <Link to="log">Log In</Link> */}
+          <input type="text" placeholder="Search..."/>
         </div>
       </>
   )

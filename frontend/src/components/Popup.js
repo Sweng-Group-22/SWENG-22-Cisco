@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../styles/Popup.css'
 
 
-export default function Popup() {
-
+export default function Popup(showFunc) {
+ 
   return (
     <>
       <div className='popup-container'>
@@ -13,11 +13,13 @@ export default function Popup() {
             <option>Select Language</option>
             <option>Irish</option>
           </select>
-        </label>
-        <label className='popup-label'>Translation:</label>
+        </label> 
+        <div className='popup-translation'><label className='popup-label'>Translation:</label>
         <textarea className='popup-textarea' />
+        </div>
+        
         <div className='popup-buttons'>
-          <button>Cancel</button>
+          <button onClick={showFunc}>Cancel</button>
           <button type='submit'>Submit</button>
         </div>
       </div>
@@ -26,5 +28,4 @@ export default function Popup() {
     </>
   )
   
-  return null
 }

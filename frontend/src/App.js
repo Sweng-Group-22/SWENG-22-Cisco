@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home'
 import LetterLine from './components/LetterLine';
 import AddButton from './components/AddButton';
+import BrowseLetter from "./pages/BrowseLetter";
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
           <Route index element={<Home />}/>
           <Route path='word' element={<WordTranslations/>}></Route>
           <Route path='browse'>
-            <Route index element={<LetterLine/>} />
-            <Route path='*' element={<AddButton/>}></Route>
+            {/* <Route index element={} /> */}
+            <Route path='*' element={<BrowseLetter/>}></Route>
           </Route>
         </Route>
       </Routes>

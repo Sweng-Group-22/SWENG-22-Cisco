@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     align-content: center;
-    background-color: bisque;
+    
+    background-color: #21d88f;
     height: 75%;
     width: 62.5%;
     position: fixed;
@@ -10,6 +11,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 76px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
     
     
 }

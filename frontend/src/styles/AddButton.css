@@ -1,7 +1,7 @@
 .add-button-container {
     position: fixed;
-    bottom: 2%;
-    right: 2%;
+    bottom: 30%;
+    right: 5%;
 }
 
 .add-button-circle {
@@ -14,7 +14,7 @@
     width: 65px;
     height: 65px;
     border-radius: 50%;
-    background-color: bisque;
+    background-color: #21d88f;
     
 }
 
@@ -24,7 +24,7 @@
 }
 
 .add-button-vertical-bar {
-    background-color: grey;
+    background-color: black;
     width: 40px;
     height: 10px;
     rotate: 90deg;
@@ -33,7 +33,7 @@
     
 }
 .add-button-horizontal-bar {
-    background-color: grey;
+    background-color: black;
     width: 40px;
     height: 10px;
     position: relative;

@@ -1,6 +1,19 @@
 .browse-letter-box{
+    
+    
     margin: 50px;
     height: 800px;
-    width: 1000px;
-    background-color: lightskyblue;
+    min-width: 1000px;
+    background-color: #21d88f;
+    
+}
+.page-letter{
+    margin-left: 20px;
+}
+.words{
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+    font-weight: 600;
 }

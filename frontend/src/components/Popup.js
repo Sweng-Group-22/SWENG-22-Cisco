@@ -7,7 +7,7 @@ export default function Popup(showFunc) {
   return (
     <>
       <div className='popup-container'>
-        <h3 className='english'>English Phrase</h3>
+        <h3 className='popup-english-phrase'>PlaceHolder 1</h3>
         <label className='popup-label'>Language: 
           <select>
             <option>Select Language</option>

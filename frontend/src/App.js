@@ -22,6 +22,7 @@ function App() {
             <Route path='*' element={<BrowseLetter/>}></Route>
           </Route>
           <Route path='*' element={<Page404/>}></Route>
+          <Route path='404' element={<Page404/>}></Route>
           <Route path='phrase'>
             <Route path="*" element={<Phrase/>}/>
           </Route>

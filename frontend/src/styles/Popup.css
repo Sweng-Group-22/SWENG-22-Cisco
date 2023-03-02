@@ -19,11 +19,14 @@
 }
 .popup-label {
     display: block;
+    text-align: center;
 }
 .popup-textarea {
     display: block;
     height: 300px;
     width: 300px;
+    margin-top: 10px;
+    margin-left: 325px;
 
     /* position: relative; */
 }
@@ -38,5 +41,7 @@
 }
 
 .popup-translation {
-    margin-left: auto;
+    /* margin-left: auto; */
+    margin-top: 10px;
+    text-align: center;
 }

@@ -10,7 +10,7 @@ export default function Phrase() {
     <>
         <Header/>
         <div className='phrase-box'>
-            <div className='phrase-title'>PlaceHolder 1</div>
+            <div className='phrase-title'>Phrase A</div>
             <div className='phrase-content'>
                 <div className='phrase-line'></div>
                 <div className='phrase-translation'>amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris</div>
@@ -20,7 +20,7 @@ export default function Phrase() {
             </div>
         </div>
         <div className='phrase-box'>
-            <div className='phrase-title'>PlaceHolder 1</div>
+            <div className='phrase-title'>Phrase B</div>
             <div className='phrase-content'>
                 <div className='phrase-line'></div>
                 <div className='phrase-translation'>purus non enim praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam</div>

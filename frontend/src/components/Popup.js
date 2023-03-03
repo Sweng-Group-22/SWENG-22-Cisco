@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Popup.css'
+import SubmitTranslation from './Submit'
 
 
 export default function Popup(showFunc) {
@@ -19,9 +20,10 @@ export default function Popup(showFunc) {
         </div>
         
         <div className='popup-buttons'>
-          <button onClick={showFunc}>Cancel</button>
-          <button type='submit'>Submit</button>
+          {/* <button onClick={showFunc}>Cancel</button>
+          <button type='submit'>Submit</button> */}
         </div>
+        <center><SubmitTranslation/></center>
       </div>
       
     

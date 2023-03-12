@@ -43,6 +43,7 @@ export default function LikeDislike() {
   return (
     <>  
       <div className='LikeDislike'>
+        <div className='like-box'>
       <button className='like' onClick={likeFunction}>
         <img src="https://i.ibb.co/vZ2QnWJ/25297.png"/>
         {likeCount}
@@ -52,6 +53,7 @@ export default function LikeDislike() {
         <img src="https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png"/>
         {dislikeCount}
       </button>
+      </div>
       </div>
     </>
   )

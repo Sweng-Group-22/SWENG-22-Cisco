@@ -26,7 +26,7 @@ jobs:
           command: "echo Hello, World!"
 
 workflows:
-  say-hello-workflow:
+  project-workflow:
     jobs:
-      - say-hello
-      - say-hello-again
+      - backend
+      - frontend

@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: "Working Directory"
-          command: "cd backend/webex && pwd"
+          command: "cd backend/webex && pwd && ls -al"
       - run:
           name: "Gradle Dependency Install"
           command: "gradle dependencies"

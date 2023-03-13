@@ -4,18 +4,19 @@ orbs:
   gradle: circleci/gradle@3.0.0
 
 jobs:
-  backend:
-    docker:
-      - image: cimg/base:stable
+  - gradle/test
+    # docker:
+    #   - image: cimg/base:stable
 
-    steps:
-      - checkout
-      - run:
-          name: "Check Backend Build"
-          command: "sudo apt-get update && sudo apt-get install gradle && cd backend/webex && gradle build"
-      - run:
-          name: "Run Backend Tests (?)"
-          command: "echo Hello World"
+    # steps:
+    #   - checkout
+    #   - run:
+    #       name: "Check Backend Build"
+    #       command: "sudo apt-get update && sudo apt-get install gradle && cd backend/webex && gradle build"
+    #   - run:
+    #       name: "Run Backend Tests (?)"
+    #       command: "echo Hello World"
+
   frontend:
     docker:
       - image: cimg/base:stable

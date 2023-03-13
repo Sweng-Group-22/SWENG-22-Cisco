@@ -1,7 +1,6 @@
 version: 2.1
 
 jobs:
-  - gradle/test
     docker:
       - image: cimg/openjdk:8-jdk
     working_directory: ~/SWENG-22-CISCO/backend/webex

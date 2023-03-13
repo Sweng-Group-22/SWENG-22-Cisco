@@ -1,10 +1,10 @@
-
 version: 2.1
 
 jobs:
+  backend:
     docker:
       - image: cimg/openjdk:8-jdk
-    
+
     steps:
       - checkout
       - run:

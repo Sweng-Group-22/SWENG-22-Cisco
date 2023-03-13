@@ -1,0 +1,11 @@
+.select-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+}
+
+.dropdown-container {
+    width: 300px;
+}

@@ -1,21 +1,47 @@
-.container {
-    background-color: #16ed98;
+.popup-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    
+    background-color: #21d88f;
     height: 75%;
     width: 62.5%;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 76px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    
     
 }
-.c2{
-    background-color: aquamarine;
-    height: 500px;
-    width: 200px;
+.popup-label {
+    display: block;
+    text-align: center;
+}
+.popup-textarea {
+    display: block;
+    height: 300px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 325px;
+
+    /* position: relative; */
+}
+.popup-buttons {
+    display: flex;
+    justify-content: space-around;
 }
 
-.textarea{
-    height: 100px;
-    resize: none;
+
+.popup-english-phrase {
+    text-align: center;
+}
+
+.popup-translation {
+    /* margin-left: auto; */
+    margin-top: 10px;
+    text-align: center;
 }

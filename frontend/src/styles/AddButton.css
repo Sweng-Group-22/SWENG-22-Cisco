@@ -1,0 +1,43 @@
+.add-button-container {
+        position: sticky;
+        bottom: 10px;
+        padding: 40px;
+        display: flex;
+        justify-content: right;
+}
+
+.add-button-circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #21d88f;
+    
+}
+
+.add-button-circle:hover > .plus * {
+    background-color: #fff;
+    transform:scale(.98);
+}
+
+.add-button-vertical-bar {
+    background-color: black;
+    width: 40px;
+    height: 10px;
+    rotate: 90deg;
+    position: relative;
+    top: 5px;
+    
+}
+.add-button-horizontal-bar {
+    background-color: black;
+    width: 40px;
+    height: 10px;
+    position: relative;
+    bottom: 5px;
+}

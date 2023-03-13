@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: "Gradle Build"
-          run: "gradle build"
+          command: "gradle build"
 
   frontend:
     docker:

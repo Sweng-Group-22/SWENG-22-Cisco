@@ -1,21 +1,21 @@
 version: 2.1
 
-orbs:
-  gradle: circleci/gradle@3.0.0
-
 jobs:
   - gradle/test
-    # docker:
-    #   - image: cimg/base:stable
-
-    # steps:
-    #   - checkout
-    #   - run:
-    #       name: "Check Backend Build"
-    #       command: "sudo apt-get update && sudo apt-get install gradle && cd backend/webex && gradle build"
-    #   - run:
-    #       name: "Run Backend Tests (?)"
-    #       command: "echo Hello World"
+    docker:
+      - image: cimg/openjdk:8-jdk
+    working_directory: ~/SWENG-22-CISCO/backend/webex
+    steps:
+      - checkout
+      - run:
+          name: "Gradle Dependency Install"
+          command: "gradle dependencies"
+      - run:
+          name: "Run Build"
+          command: "gradle build"
+      - run:
+          name: "Run Tests (?)"
+          command: "echo tests"
 
   frontend:
     docker:

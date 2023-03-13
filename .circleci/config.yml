@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: "Check Backend Build"
-          command: "cd backend/webex && ./gradlew build"
+          command: "cd backend/webex && gradle build"
       - run:
           name: "Run Backend Tests (?)"
           command: "echo Hello World"

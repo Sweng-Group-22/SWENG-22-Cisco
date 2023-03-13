@@ -5,11 +5,10 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
 
+    working_directory: ~/backend/webex
+
     steps:
       - checkout
-      - run:
-          name: "Working Directory"
-          command: "cd backend/webex && pwd && ls -al"
       - run:
           name: "Gradle Dependency Install"
           command: "gradle dependencies"

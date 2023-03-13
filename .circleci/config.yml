@@ -10,14 +10,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Gradle Dependency Install"
-          command: "gradle dependencies"
-      - run:
-          name: "Run Build"
-          command: "gradle build"
-      - run:
-          name: "Run Tests (?)"
-          command: "echo tests"
+          name: "Gradle Build"
+          run: "gradle build"
 
   frontend:
     docker:

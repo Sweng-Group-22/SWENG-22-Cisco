@@ -1,4 +1,4 @@
-.phrase-box{
+.translation-box{
     display: flex;
     flex-direction: column;
     width: 75%;
@@ -18,26 +18,26 @@
     margin-top: 10px;
 }
 
-.phrase-content{
+.translation-content{
     display: flex;
     align-items: center;
     height: 50%;
     font-size: medium;
     color: black;
 }
-.phrase-vertical-line{
+.translation-vertical-line{
     height: 170px;
     width: 2px;
     margin-left: 30px;
     margin-top: 60px;
     background-color: #1a9f6a;
 }
-.phrase-translation{
+.translation-translation{
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 20px;
 }
-.phrase-like-dislike{
+.translation-like-dislike{
     display: flex;
     justify-content: right;
 }

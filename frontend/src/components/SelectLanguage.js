@@ -8,7 +8,7 @@ export default function SelectLanguage(){
             <h3>Choose your language</h3><br/>
             <Dropdown title="Language">
                 <Dropdown.Item as="a" href=
-                "http://localhost:3000/phrase/phrase1">
+                "http://localhost:3000/phrase/get">
                     Gaeilge (Irish)
                 </Dropdown.Item>
                 <Dropdown.Item>Español (Spanish)</Dropdown.Item>

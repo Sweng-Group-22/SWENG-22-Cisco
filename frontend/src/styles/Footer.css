@@ -27,18 +27,23 @@
 
 .twitter:hover {
     color: rgb(29, 161, 242);  
+    cursor: pointer;
 }
 .linkedin:hover {
     color: rgb(0, 119, 181);  
+    cursor: pointer;
 }
 .facebook:hover {
     color: rgb(66, 103, 178);  
+    cursor: pointer;
 }
 .youtube:hover {   
     color: rgb(255, 0, 0); 
+    cursor: pointer;
 }
 .instagram:hover {  
     color: rgb(225, 48, 108); 
+    cursor: pointer;
 }
 
 
@@ -46,6 +51,9 @@
 .copyright {
     color: black;
     margin-right: 130px;
+}
+.copyright:hover {
+    cursor: pointer;
 }
 
 .button-group-2 button {

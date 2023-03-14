@@ -9,6 +9,7 @@ import LetterLine from './components/LetterLine';
 import AddButton from './components/AddButton';
 import BrowseLetter from "./pages/BrowseLetter";
 import Phrase from "./pages/Phrase";
+import GetPhrases from "./pages/GetPhrases";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='404' element={<Page404/>}></Route>
           <Route path='phrase'>
             <Route path="*" element={<Phrase/>}/>
+            <Route path="get" element={<GetPhrases/>}/>
           </Route>
         </Route>
       </Routes>

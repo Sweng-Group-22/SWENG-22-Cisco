@@ -14,8 +14,7 @@
     border-style: solid;
     border-width: 2px;
     border-color: black;
-    
-    
+    z-index: 10;    
 }
 .popup-label {
     display: block;
@@ -34,7 +33,6 @@
     display: flex;
     justify-content: space-around;
 }
-
 
 .popup-english-phrase {
     text-align: center;

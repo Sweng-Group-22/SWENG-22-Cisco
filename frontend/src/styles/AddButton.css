@@ -23,6 +23,7 @@
 .add-button-circle:hover > .plus * {
     background-color: #fff;
     transform:scale(.98);
+    cursor: pointer;
 }
 
 .add-button-vertical-bar {

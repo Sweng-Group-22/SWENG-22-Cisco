@@ -18,6 +18,7 @@
     background-color: white;
     color: white;
     color: #078855;
+    cursor: pointer;
 }
 
 .translate-box input[type=text] {

@@ -1,13 +1,13 @@
 import React from 'react'
 import '../styles/Popup.css'
+import '../styles/CloseButton.css'
 import SubmitTranslation from './Submit'
 
 
 export default function Popup(showFunc) {
- 
   return (
     <>
-      <div className='popup-container'>
+      <div id='t-popup' className='popup-container'>
         <h3 className='popup-english-phrase'>Add Translation</h3>
         <label className='popup-label'>Language: 
           <select>
@@ -25,8 +25,6 @@ export default function Popup(showFunc) {
         </div>
         <center><SubmitTranslation/></center>
       </div>
-      
-    
     </>
   )
   

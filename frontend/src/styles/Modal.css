@@ -1,4 +1,4 @@
-.popup-container {
+.modal-container {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -16,29 +16,29 @@
     border-color: black;
     z-index: 10;    
 }
-.popup-label {
+.modal-label {
     display: block;
     text-align: center;
 }
-.popup-textarea {
-    display: block;
-    height: 300px;
-    width: 300px;
+.modal-textarea {
+    height: 200px;
+    width: 80%;
     margin-top: 10px;
-    margin-left: 325px;
+    color: #000;
+    resize: none;
 
     /* position: relative; */
 }
-.popup-buttons {
+.modal-buttons {
     display: flex;
     justify-content: space-around;
 }
 
-.popup-english-phrase {
+.modal-english-phrase {
     text-align: center;
 }
 
-.popup-translation {
+.modal-translation {
     /* margin-left: auto; */
     margin-top: 10px;
     text-align: center;

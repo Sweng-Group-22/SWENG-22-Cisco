@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/CloseButton.css";
 import { useState } from "react";
-import Popup from "./Popup";
+import Modal from "./Modal";
 
 export default function CloseButton() {
   const [showPopup, setshowPopup] = useState(false);
@@ -18,7 +18,7 @@ export default function CloseButton() {
           </div>
         </div>
       </div>
-      {showPopup && <Popup showFunc={toggleAddPopup}/>}
+      {showPopup && <Modal hideModal={toggleAddPopup}/>}
     </>
   );
 }

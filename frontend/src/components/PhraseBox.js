@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/PhraseBox.css'
 import { useState } from "react"
-import Popup from "./Popup"
+import Modal from './Modal';
 
 export default function PhraseBox() {
     const [displayPopup, setshowPopup] = useState(false);
@@ -27,7 +27,7 @@ export default function PhraseBox() {
             </div>
           </div>
         </div>
-        {displayPopup && <Popup showFunc={toggleAddPopup}/>}
+        {displayPopup && <Modal hideModal={toggleAddPopup}/>}
       </>
     )
 }

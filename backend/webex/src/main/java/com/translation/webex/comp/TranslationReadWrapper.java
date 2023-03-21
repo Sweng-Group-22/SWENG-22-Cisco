@@ -24,5 +24,12 @@ public class TranslationReadWrapper {
 
         return result;
     }
+
+    public Translation[] queryByLetter(char letter)
+    {
+        Query query = new Query(Criteria.where("englishPhrase").regex("/\b" + letter + "[A-z]*/g"));
+        Translation[] test = mongoTemplate.find(query, Translation.class, COLLECTION_NAME).toArray(new Translation[0]);
+        return test;
+    }
 	
 }

@@ -14,6 +14,16 @@ npm run start
 
 The application should start running the webpage, otherwise open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Getting Started for Gradle and MongoDB app (Backend)
+
+Before running the backend, make sure you have Eclipse and MongoDB installed and running.
+1. Go to ```File -> Import``` to open the Import window.
+2. Select ```Gradle -> Existing Gradle Project``` in the Import window.
+3. For the project root directory, choose the path of the backend folder
+4. Click "Finish" and wait for Eclipse to automatically import the project.
+The imported project will appear in the "Package Explorer" view in Eclipse.
+Also, under the RestController.java file, there is a line of code "String folder = "/usr/local/tmp/", the path specified in this line of code can be any valid directory path, as long as it is accessible.
+
 
 ## Git workflow
 In order to submit your code, you should use a workflow like this. This makes sure that the right versions of the code are in the repo, and that we're all working off the same code. 

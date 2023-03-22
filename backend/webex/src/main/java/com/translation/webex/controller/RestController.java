@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.Date;
 import java.util.HashMap;
@@ -49,7 +50,7 @@ public class RestController {
 	public Object helloworld() {
 		Map<String,Object> ret = new HashMap();
 			ret.put("code", 200);
-			ret.put("oper","hello world");
+			ret.put("oper","hello world您好");
 		return ret;
 	}
 	@PostMapping(value="convert")
@@ -151,9 +152,8 @@ public class RestController {
 		File localFile = new File(filename);
 		try {
 			file.transferTo(localFile);
-			
-			BufferedReader reader = new BufferedReader(
-					new FileReader(localFile));
+			InputStream input = new FileInputStream(localFile);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(input,"utf-8"));
 			String line =null;
 			int i=1;
 			while((line = reader.readLine())!=null){ 
@@ -194,6 +194,18 @@ public class RestController {
 		ret.put("code", 200);
 		ret.put("oper","vote");
 		
+		return ret;
+	}
+	@PostMapping(value="queryByLetter")
+	public Object queryByLetter(@RequestParam("englishPhrase")String englishPhrase) {
+		Map<String,Object> ret = new HashMap();
+		
+		List<Translation> res = translationReadWrapper.queryByLetter(englishPhrase);
+		if(res != null) {
+			ret.put("data", res);
+		}
+		ret.put("code", 200);
+		ret.put("oper","queryByLetter");
 		return ret;
 	}
 }

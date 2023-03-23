@@ -9,12 +9,14 @@ export default function Modal(props) {
     <>
       <div id='t-modal' className='modal-container'>
         <h3 className='modal-english-phrase'>Add Translation</h3>
+        <div className='modal-language-container'>
         <label className='modal-label'>Language: 
-          <select>
+          
+        </label> <select>
             <option>Select Language</option>
             <option>Irish</option>
           </select>
-        </label> 
+        </div>
         <div className='modal-translation'><label className='modal-label'>Translation:</label>
         <textarea className='modal-textarea' />
         </div>

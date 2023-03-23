@@ -16,6 +16,11 @@
     border-color: black;
     z-index: 10;    
 }
+
+.modal-language-container {
+    display: flex;
+    justify-content: center;
+}
 .modal-label {
     display: block;
     text-align: center;
@@ -31,6 +36,7 @@
 }
 .modal-buttons {
     display: flex;
+    align-items: center;
     justify-content: space-around;
 }
 

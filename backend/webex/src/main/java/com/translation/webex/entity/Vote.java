@@ -13,6 +13,8 @@ public class Vote {
     
     private int duplicateID;
     private int amountOfVotes;
+    private int amountOfLikes;
+    private int amountOfDislikes;
     private boolean reachedThreshold;
     
     public Vote() {
@@ -53,5 +55,21 @@ public class Vote {
 
     public void setAmountOfVotes(int amountOfVotes) {
         this.amountOfVotes = amountOfVotes;
+    }
+
+    public int getAmountOfLikes() {
+        return amountOfLikes;
+    }
+
+    public void setAmountOfLikes(int amountOfLikes){
+        this.amountOfLikes = amountOfLikes;
+    }
+
+    public int getAmountOfDislikes() {
+        return amountOfDislikes;
+    }
+
+    public void setAmountOfDislikes(int amountOfDislikes){
+        this.amountOfDislikes = amountOfDislikes;
     }
 }

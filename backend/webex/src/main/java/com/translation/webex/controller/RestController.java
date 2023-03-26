@@ -183,12 +183,16 @@ public class RestController {
 	@PostMapping(value="vote")
 	public Object vote(@RequestParam("segment")Integer segment,
 			@RequestParam("language")String language,
-			@RequestParam("amountOfVotes")Integer amountOfVotes) {
+			@RequestParam("amountOfVotes")Integer amountOfVotes,
+			@RequestParam("amountOfLikes")Integer amountOfLikes,
+			@RequestParam("amountOfDislikes")Integer amountOfDislikes,) {
 		Map<String,Object> ret = new HashMap();
 		Vote t = new Vote();
 		 	t.setSegment(segment);
 		 	t.setLanguage(language);
 		 	t.setAmountOfVotes(amountOfVotes);
+			t.setAmountOfLikes(amountOfLikes);
+			t.setAmountOfDislikes(amountOfDislikes);
 		 	voteDao.save(t);	
 		    
 		ret.put("code", 200);

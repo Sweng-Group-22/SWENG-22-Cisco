@@ -3,7 +3,7 @@
     flex-direction: column;
     align-content: center;
     
-    background-color: #21d88f;
+    background-color: rgb(14, 106, 120);
     height: 75%;
     width: 62.5%;
     position: fixed;
@@ -13,17 +13,23 @@
     border-radius: 76px;
     border-style: solid;
     border-width: 2px;
-    border-color: black;
+    border-color: rgb(10, 84, 95);
     z-index: 10;    
 }
 
 .modal-language-container {
     display: flex;
     justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 .modal-label {
     display: block;
     text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-right: 10px;
 }
 .modal-textarea {
     height: 200px;
@@ -42,10 +48,15 @@
 
 .modal-english-phrase {
     text-align: center;
+    margin: 30px;
+    margin-top: 40px;
+    color: white;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .modal-translation {
     /* margin-left: auto; */
-    margin-top: 10px;
+    margin: 20px;
     text-align: center;
 }

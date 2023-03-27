@@ -39,9 +39,9 @@ export default function Footer(){
             
             {/*row 2 */}
             <div className='row2'>
-              <a className='copyright'>
+              <h className='copyright'>
                 &copy; {new Date().getFullYear()} Cisco and/or its affiliates. All Rights Reserved.
-              </a>
+              </h>
 
               <a className='button-group-2'>
                 <button type='button' className='TermsAndConditions'>

@@ -2,13 +2,16 @@ import React from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import SelectLanguage from '../components/SelectLanguage';
+import '../styles/Home.css'
 
 export default function Home() {
   return (
     <>
         <center>
 	        <Header/>
-          <h1>Home</h1>
+          <h1 className="home-title">
+            WEBEX<br></br>TRANSLATE
+          </h1>
           <pre>
               <tt>                       (((((((((((((((((#         //////////////****            </tt><br/>
               <tt>               (((((((######(((((((((((   ////////////////********              </tt><br/>

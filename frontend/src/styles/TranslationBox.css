@@ -1,21 +1,14 @@
 .translation-box{
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    height: 370px;
-    margin-left: 5%;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    background-color: #21d88f;
+    width: 80%;
+    min-height: 250px;
+    margin-left: 10%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: rgb(170, 231, 240);
     padding: 20px;
     padding-bottom: 50px;
     border-radius: 30px;
-}
 
-.header {
-    color: white;
-    margin-left: 20px;
-    margin-top: 10px;
 }
 
 .translation-content{
@@ -24,13 +17,14 @@
     height: 50%;
     font-size: medium;
     color: black;
+    
 }
 .translation-vertical-line{
-    height: 170px;
+    min-height: 150px;
     width: 2px;
     margin-left: 30px;
-    margin-top: 60px;
-    background-color: #1a9f6a;
+    margin-top: 40px;
+    background-color: rgb(102, 199, 214);
 }
 .translation-translation{
     margin-left: 30px;
@@ -38,6 +32,7 @@
     margin-top: 20px;
 }
 .translation-like-dislike{
+    padding-top: 40px;
     display: flex;
     justify-content: right;
 }

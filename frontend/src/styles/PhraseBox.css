@@ -1,12 +1,12 @@
 .phrase-box{
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 60%;
     height: 130px;
     margin-left: 5%;
     margin-top: 50px;
     margin-bottom: 100px;
-    background-color: #21d88f;
+    background-color: rgb(14, 106, 120);
     padding: 20px;
     padding-bottom: 50px;
     border-radius: 30px;
@@ -30,7 +30,7 @@
     width: 2px;
     margin-left: 30px;
     margin-top: 60px;
-    background-color: #1a9f6a;
+    background-color: rgb(255, 255, 255);
 }
 .phrase-translation{
     margin-left: 30px;
@@ -42,11 +42,16 @@
     justify-content: right;
 }
 .phrase-add-translation{
-    margin-left: 800px;
-    margin-top: -50px
+    margin-left: 65%;
+    margin-top: -55px;
+    color: black;
+    background-color: rgb(170, 231, 240);
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 10px;
 }
 .phrase-add-translation:hover{
-    color: white;
+    color: rgb(14, 106, 120);
     cursor: pointer;
 }
 .popup-container {
@@ -54,7 +59,7 @@
     flex-direction: column;
     align-content: center;
     
-    background-color: #21d88f;
+    background-color: rgb(14, 106, 120);
     height: 75%;
     width: 62.5%;
     position: fixed;
@@ -115,7 +120,7 @@ width: 65px;
 height: 65px;
 border-radius: 50%;
 border-color: black;
-background-color: #21d88f;
+background-color: rgb(14, 106, 120);
 
 }
 

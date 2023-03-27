@@ -6,6 +6,7 @@ import LikeDislike from '../components/LikeDislike'
 import TranslationBox from '../components/TranslationBox'
 import Modal from '../components/Modal'
 import { useState } from 'react'
+import '../styles/Phrase.css'
 
 export default function Phrase() {
   const [openModal, setOpenModal] = useState(false);
@@ -19,8 +20,18 @@ export default function Phrase() {
   return (
     <>
         <Header/>
-        <TranslationBox/>
-        <TranslationBox/>
+        <div className='title'>
+            <p>Translated phrase</p>   {/* Needs to be changed after discussion with backend */}
+        </div>
+        <div class="row2">
+        <div className='column2'>
+          <TranslationBox/>
+          <TranslationBox/>
+        </div>
+        
+        <div className='column2'><TranslationBox/><TranslationBox/></div>
+        </div>
+        
         <AddButton showModal={showModal}/>
         <Footer/>
         {openModal && <Modal hideModal={hideModal}/> }

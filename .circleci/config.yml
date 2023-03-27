@@ -23,7 +23,7 @@ jobs:
       - checkout
       - run:
           name: "test"
-          command: "pwd"
+          command: "ls -al"
 
       - run:
           name: "Run Frontend Tests (?)"

@@ -15,7 +15,7 @@ jobs:
 
   frontend:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:19.8.1
     steps:
       - checkout
       - run:

@@ -22,6 +22,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "test"
+          command: "pwd"
+
+      - run:
           name: "Run Frontend Tests (?)"
           command: "npm i && npm run start"
 

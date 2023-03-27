@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run:
           name: "Run Frontend Tests (?)"
-          command: "echo Hello, World!"
+          command: "npm i && npm run start"
 
 workflows:
   project-workflow:

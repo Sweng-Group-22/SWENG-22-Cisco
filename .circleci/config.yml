@@ -27,7 +27,7 @@ jobs:
 
       - run:
           name: "Run Frontend Tests (?)"
-          command: "cd frontend && npm i && npm start"
+          command: "cd frontend && npm i && npm build"
 
 workflows:
   project-workflow:

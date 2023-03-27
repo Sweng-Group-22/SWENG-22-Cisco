@@ -16,6 +16,9 @@ jobs:
   frontend:
     docker:
       - image: cimg/node:19.8.1
+
+    working_directory: ~/frontend
+
     steps:
       - checkout
       - run:

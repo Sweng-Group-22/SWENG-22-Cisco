@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/PhraseBox.css'
+import LikeDislike from '../components/LikeDislike'
 import { useState } from "react"
 import Modal from './Modal';
 
@@ -10,6 +11,7 @@ export default function PhraseBox(props) {
           <div class='header'>
             <h1>"Phrase"</h1>   {/* Needs to be changed after discussion with backend */}
           </div>
+          <center><LikeDislike/></center>
           <div class='phrase-add-translation' onClick={props.showModal}>
               <h2>Suggest Translation</h2>
           </div>

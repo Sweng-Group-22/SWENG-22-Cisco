@@ -14,6 +14,7 @@ export default function LikeDislike() {
     if(likeActive){                // unlike
       setLikeActive(false)
       setLikeCount(likeCount-1)
+      unsetLike();
     }                            
     else{                          // like
       setLikeActive(true)
@@ -21,7 +22,9 @@ export default function LikeDislike() {
       if(dislikeActive){
         setDislikeActive(false)
         setDislikeCount(dislikeCount-1)
+        unsetDislike();
       }
+      setLike();
     }
   }
 
@@ -29,6 +32,7 @@ export default function LikeDislike() {
     if(dislikeActive){             // undo dislike
       setDislikeActive(false)
       setDislikeCount(dislikeCount-1)
+      unsetDislike();
     }
     else{                          // dislike
       setDislikeActive(true)
@@ -36,7 +40,37 @@ export default function LikeDislike() {
       if(likeActive){
         setLikeActive(false)
         setLikeCount(likeCount-1)
+        unsetLike();
       }
+      setDislike();
+    }
+  }
+
+  function setLike() {
+    var get = document.getElementById('likeImage');
+    if (get.src.match("https://i.ibb.co/vZ2QnWJ/25297.png")){
+      get.src = "https://i.ibb.co/5KnfWXP/liked.png";
+    }
+  }
+
+  function unsetLike() {
+    var get = document.getElementById('likeImage');
+    if (get.src.match("https://i.ibb.co/5KnfWXP/liked.png")){
+      get.src = "https://i.ibb.co/vZ2QnWJ/25297.png";
+    }
+  }
+
+  function setDislike() {
+    var get = document.getElementById('dislikeImage');
+    if (get.src.match("https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png")){
+      get.src = "https://i.ibb.co/Jt2Wzf9/disliked.png";
+    }
+  }
+
+  function unsetDislike() {
+    var get = document.getElementById('dislikeImage');
+    if (get.src.match("https://i.ibb.co/Jt2Wzf9/disliked.png")){
+      get.src = "https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png";
     }
   }
 
@@ -45,12 +79,12 @@ export default function LikeDislike() {
       <div className='LikeDislike'>
         <div className='like-box'>
       <button className='like' onClick={likeFunction}>
-        <img src="https://i.ibb.co/vZ2QnWJ/25297.png"/>
+        <img src="https://i.ibb.co/vZ2QnWJ/25297.png" id = "likeImage"/>
         {likeCount}
       </button>
         
       <button className='dislike' onClick={dislikeFunction}>
-        <img src="https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png"/>
+        <img src="https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png" id = "dislikeImage"/>
         {dislikeCount}
       </button>
       </div>

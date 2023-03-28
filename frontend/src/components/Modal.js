@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/Modal.css'
 import '../styles/CloseButton.css'
 import SubmitTranslation from './Submit'
+import CancelTranslation from './Cancel'
 import '../styles/Modal.css'
 
 
@@ -30,7 +31,8 @@ export default function Modal(props) {
         <div className='modal-buttons'>'
         
 
-          <button onClick={props.hideModal}>Cancel</button>
+          {/* <button onClick={props.hideModal}>Cancel</button> */}
+          <CancelTranslation hideModal={props.hideModal}/>
           <SubmitTranslation/>
         {/* </center> */}
       </div>

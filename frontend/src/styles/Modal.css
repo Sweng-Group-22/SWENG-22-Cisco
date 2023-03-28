@@ -4,7 +4,7 @@
     align-content: center;
     
     background-color: rgb(14, 106, 120);
-    height: 75%;
+    height: 90%;
     width: 62.5%;
     position: fixed;
     top: 50%;
@@ -43,6 +43,7 @@
 .modal-buttons {
     display: flex;
     align-items: center;
+    margin-left: -250px;
     justify-content: space-around;
 }
 

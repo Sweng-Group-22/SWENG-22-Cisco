@@ -11,7 +11,7 @@ export default function PhraseBox(props) {
           <div class='header'>
             <h1>"Phrase"</h1>   {/* Needs to be changed after discussion with backend */}
           </div>
-          <center><LikeDislike/></center>
+          <center><LikeDislike idn={props.idn}/></center>
           <div class='phrase-add-translation' onClick={props.showModal}>
               <h2>Suggest Translation</h2>
           </div>

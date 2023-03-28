@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/TranslationBox.css'
 import LikeDislike from '../components/LikeDislike'
 
-export default function Phrase() {
+export default function Phrase(props) {
     return (
       <>
         <div className='translation-box'>
@@ -12,7 +12,7 @@ export default function Phrase() {
               Amet nisl suscipit adipiscing bibendum est ultricies 
               integer quis auctor elit sed vulputate mi sit amet mauris. 
             </div>                           {/* Needs to be changed after discussion with backend */}
-            <div className='translation-like-dislike'><LikeDislike/></div>
+            <div className='translation-like-dislike'><LikeDislike idn={props.idn}/></div>
           </div>
           
         </div>

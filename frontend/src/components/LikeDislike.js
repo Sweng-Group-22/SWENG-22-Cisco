@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import '../styles/LikeDislike.css'
 
 
-export default function LikeDislike() {
+export default function LikeDislike(props) {
 
   const [likeActive, setLikeActive] = useState(false)
   const [dislikeActive, setDislikeActive] = useState(false)
@@ -47,28 +47,28 @@ export default function LikeDislike() {
   }
 
   function setLike() {
-    var get = document.getElementById('likeImage');
+    var get = document.getElementById('likeImage' + props.idn);
     if (get.src.match("https://i.ibb.co/vZ2QnWJ/25297.png")){
       get.src = "https://i.ibb.co/5KnfWXP/liked.png";
     }
   }
 
   function unsetLike() {
-    var get = document.getElementById('likeImage');
+    var get = document.getElementById('likeImage' +  props.idn);
     if (get.src.match("https://i.ibb.co/5KnfWXP/liked.png")){
       get.src = "https://i.ibb.co/vZ2QnWJ/25297.png";
     }
   }
 
   function setDislike() {
-    var get = document.getElementById('dislikeImage');
+    var get = document.getElementById('dislikeImage' +  props.idn);
     if (get.src.match("https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png")){
       get.src = "https://i.ibb.co/Jt2Wzf9/disliked.png";
     }
   }
 
   function unsetDislike() {
-    var get = document.getElementById('dislikeImage');
+    var get = document.getElementById('dislikeImage' +  props.idn);
     if (get.src.match("https://i.ibb.co/Jt2Wzf9/disliked.png")){
       get.src = "https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png";
     }
@@ -79,12 +79,12 @@ export default function LikeDislike() {
       <div className='LikeDislike'>
         <div className='like-box'>
       <button className='like' onClick={likeFunction}>
-        <img src="https://i.ibb.co/vZ2QnWJ/25297.png" id = "likeImage"/>
+        <img src="https://i.ibb.co/vZ2QnWJ/25297.png" id = {"likeImage" +  props.idn}/>
         {likeCount}
       </button>
         
       <button className='dislike' onClick={dislikeFunction}>
-        <img src="https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png" id = "dislikeImage"/>
+        <img src="https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png" id = {"dislikeImage" +  props.idn}/>
         {dislikeCount}
       </button>
       </div>

@@ -25,11 +25,11 @@ export default function Phrase() {
         </div>
         <div class="row2">
         <div className='column2'>
-          <TranslationBox/>
-          <TranslationBox/>
+          <TranslationBox idn={1}/>
+          <TranslationBox idn={2}/>
         </div>
         
-        <div className='column2'><TranslationBox/><TranslationBox/></div>
+        <div className='column2'><TranslationBox idn={3}/><TranslationBox idn={4}/></div>
         </div>
         
         <AddButton showModal={showModal}/>

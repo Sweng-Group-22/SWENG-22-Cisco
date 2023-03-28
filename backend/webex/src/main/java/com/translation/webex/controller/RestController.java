@@ -33,7 +33,8 @@ import jakarta.servlet.http.HttpServletResponse;
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 	
-	String folder = "/usr/local/tmp/";
+	String folder = "C:\\Users\\Ameen\\Downloads";
+//			"/usr/local/tmp/";
 	
 	private static final String CSV_COLUMN_SEPARATOR = ",";
 	private static final String CSV_RN = "\r\n";
@@ -185,7 +186,7 @@ public class RestController {
 			@RequestParam("language")String language,
 			@RequestParam("amountOfVotes")Integer amountOfVotes,
 			@RequestParam("amountOfLikes")Integer amountOfLikes,
-			@RequestParam("amountOfDislikes")Integer amountOfDislikes,) {
+			@RequestParam("amountOfDislikes")Integer amountOfDislikes) {
 		Map<String,Object> ret = new HashMap();
 		Vote t = new Vote();
 		 	t.setSegment(segment);

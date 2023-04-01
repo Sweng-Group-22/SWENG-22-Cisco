@@ -10,8 +10,11 @@ import AddButton from './components/AddButton';
 import BrowseLetter from "./pages/BrowseLetter";
 import Phrase from "./pages/Phrase";
 import GetPhrases from "./pages/GetPhrases";
-
+// import { useQuery } from "react-query";
 function App() {
+  
+	// Using the hook
+	
   return (
     <>
       <Routes>
@@ -19,7 +22,7 @@ function App() {
           <Route index element={<Home />}/>
           <Route path='word' element={<WordTranslations/>}></Route>
           <Route path='browse'>
-            {/* <Route index element={} /> */}
+            
             <Route path='*' element={<BrowseLetter/>}></Route>
           </Route>
           <Route path='*' element={<Page404/>}></Route>

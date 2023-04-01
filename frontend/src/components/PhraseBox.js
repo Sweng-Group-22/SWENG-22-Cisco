@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/PhraseBox.css'
 import LikeDislike from '../components/LikeDislike'
-import { useState } from "react"
 import Modal from './Modal';
 
 export default function PhraseBox(props) {

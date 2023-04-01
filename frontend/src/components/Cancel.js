@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import '../styles/Cancel.css'
 
 export default function CancelTranslation(props) {   

@@ -1,5 +1,4 @@
 import React from 'react'
-import AddButton from '../components/AddButton'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import { Link } from 'react-router-dom'

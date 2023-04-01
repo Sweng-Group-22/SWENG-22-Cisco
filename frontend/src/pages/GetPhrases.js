@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import CloseButton from '../components/CloseButton'
 import PhraseBox from '../components/PhraseBox'
 import { useState } from 'react'
 

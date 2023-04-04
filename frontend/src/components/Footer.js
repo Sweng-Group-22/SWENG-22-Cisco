@@ -43,7 +43,7 @@ export default function Footer(){
                 &copy; {new Date().getFullYear()} Cisco and/or its affiliates. All Rights Reserved.
               </h>
 
-              <a className='button-group-2'>
+              <a href='http://localhost:3000' className='button-group-2'>
                 <button type='button' className='TermsAndConditions'>
                   Terms and Conditions
                 </button>

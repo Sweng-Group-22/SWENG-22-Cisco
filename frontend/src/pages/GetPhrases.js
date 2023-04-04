@@ -1,8 +1,10 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import PhraseBox from '../components/PhraseBox'
+import GetPhrasesBox from '../components/GetPhrasesBox'
+import '../styles/GetPhrases.css'
 import { useState } from 'react'
+
 
 export default function GetPhrases() {
 
@@ -17,12 +19,30 @@ export default function GetPhrases() {
   return (
     <>
         <Header/>
+        <div className='title'>
+            <p>Get Translation</p>   {/* Needs to be changed after discussion with backend */}
+        </div>
+        <div class="row3">
+          <div className='column3'>
+            <GetPhrasesBox idn={1} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
+            <GetPhrasesBox idn={2} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
+          </div>
+        
+          <div className='column3'>
+            <GetPhrasesBox idn={3} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
+            <GetPhrasesBox idn={4} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
+          </div>
+        </div>
+        
+        <Footer/>
+    </>
+  )
+}
+
+{/* <Header/>
         
         <PhraseBox idn={1} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
         <PhraseBox idn={2} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
         <PhraseBox idn={3} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
 
-        <Footer/>
-    </>
-  )
-}
+        <Footer/> */}

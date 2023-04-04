@@ -7,7 +7,7 @@ export default function Phrase(props) {
       <>
         <div className='translation-box'>
           <div className='translation-content'>
-            <div className='translation-vertical-line'></div>
+            <div className='translation-vertical-line'></div> 
             <div className='translation-translation'>
               Amet nisl suscipit adipiscing bibendum est ultricies 
               integer quis auctor elit sed vulputate mi sit amet mauris. 

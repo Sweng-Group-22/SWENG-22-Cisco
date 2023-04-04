@@ -43,7 +43,7 @@
 .modal-buttons {
     display: flex;
     align-items: center;
-    margin-left: -250px;
+    margin-left: -320px;
     margin-top: -5px;
     justify-content: space-around;
 }
@@ -51,7 +51,7 @@
 .modal-english-phrase {
     text-align: center;
     margin: 30px;
-    margin-top: 40px;
+    margin-top: 100px;
     color: white;
     font-size: 35px;
     font-family: Arial, Helvetica, sans-serif;

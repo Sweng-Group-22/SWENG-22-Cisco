@@ -20,7 +20,7 @@
 
 .translation-vertical-line{
     min-height: 150px;
-    width: 2px;
+    width: 6px;
     margin-left: 30px;
     margin-top: 40px;
     background-color: rgb(102, 199, 214);
@@ -35,7 +35,7 @@
 }
 
 .translation-like-dislike{
-    padding-top: 100px;
+    padding-top: 7%;
     margin-left: 10px;
     display: flex;
     justify-content: right;

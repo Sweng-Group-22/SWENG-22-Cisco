@@ -1,5 +1,4 @@
 import React from 'react'
-import AddButton from '../components/AddButton'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SubmitTranslation from '../components/Submit'

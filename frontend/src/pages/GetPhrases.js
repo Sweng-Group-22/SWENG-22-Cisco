@@ -38,11 +38,3 @@ export default function GetPhrases() {
     </>
   )
 }
-
-{/* <Header/>
-        
-        <PhraseBox idn={1} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
-        <PhraseBox idn={2} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
-        <PhraseBox idn={3} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
-
-        <Footer/> */}

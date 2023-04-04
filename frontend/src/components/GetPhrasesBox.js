@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/GetPhrasesBox.css'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 import Modal from './Modal';
 
 export default function GetPhrasesBox(props) {

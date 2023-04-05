@@ -32,7 +32,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 
 @org.springframework.web.bind.annotation.RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*")
 public class RestController {
 	
 	String folder = "C:\\Users\\Ameen\\Downloads";

@@ -57,12 +57,16 @@
     cursor: default;
 }
 
-.button-group-2 button {
+.button-group-2 a {
     color: white;
     margin-right: 30px;
     cursor: pointer;
     appearance: auto;
     background-color: inherit; 
     border: none;
+}
+
+.button-group-2:hover a {
+    color: white;
 }
 

@@ -12,10 +12,11 @@ export default function Home() {
           <h1 className="home-title">
             WEBEX<br></br>TRANSLATE
           </h1>
-          <a>
+          <div>
             <img className="img" src="https://i.ibb.co/fSf0pbX/Webex-Logo-Txt-Clr.png" alt="Logo" border="0" />
-          </a>
+          </div>
         </center>
+        <br/>
         <SelectLanguage/>
         <Footer/>
     </>

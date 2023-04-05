@@ -8,7 +8,6 @@
     padding: 20px;
     padding-bottom: 50px;
     border-radius: 30px;
-
 }
 
 .translation-content{
@@ -17,24 +16,27 @@
     height: 50%;
     font-size: medium;
     color: black;
-    
 }
+
 .translation-vertical-line{
     min-height: 150px;
-    width: 2px;
+    width: 6px;
     margin-left: 30px;
     margin-top: 40px;
     background-color: rgb(102, 199, 214);
 }
+
 .translation-translation{
-    margin-left: 30px;
+    margin-left: 5px;
     margin-right: 30px;
     margin-top: 20px;
     text-align: left;
     padding: 5%;
 }
+
 .translation-like-dislike{
-    padding-top: 40px;
+    padding-top: 7%;
+    margin-left: 10px;
     display: flex;
     justify-content: right;
 }

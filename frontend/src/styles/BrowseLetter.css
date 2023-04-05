@@ -8,7 +8,7 @@
     margin-bottom: 80px;
     min-height: 550px;
     width: 850px;
-    background-color: rgb(102, 199, 214);
+    background-color: rgb(170, 231, 240);
     border-radius: 30px;
     
 }
@@ -27,5 +27,4 @@
     justify-content: space-between;
     font-size: 24px;
     font-weight: 600;
-    color:black;
 }

@@ -49,13 +49,13 @@ export default function LikeDislike(props) {
   function setLike() {
     var get = document.getElementById('likeImage' + props.idn);
     if (get.src.match("https://i.ibb.co/vZ2QnWJ/25297.png")){
-      get.src = "https://i.ibb.co/5KnfWXP/liked.png";
+      get.src = "https://i.ibb.co/WggxSHt/Liked-Clr.png";
     }
   }
 
   function unsetLike() {
     var get = document.getElementById('likeImage' +  props.idn);
-    if (get.src.match("https://i.ibb.co/5KnfWXP/liked.png")){
+    if (get.src.match("https://i.ibb.co/WggxSHt/Liked-Clr.png")){
       get.src = "https://i.ibb.co/vZ2QnWJ/25297.png";
     }
   }
@@ -63,13 +63,13 @@ export default function LikeDislike(props) {
   function setDislike() {
     var get = document.getElementById('dislikeImage' +  props.idn);
     if (get.src.match("https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png")){
-      get.src = "https://i.ibb.co/Jt2Wzf9/disliked.png";
+      get.src = "https://i.ibb.co/QYF4PQ7/Disliked-Clr.png";
     }
   }
 
   function unsetDislike() {
     var get = document.getElementById('dislikeImage' +  props.idn);
-    if (get.src.match("https://i.ibb.co/Jt2Wzf9/disliked.png")){
+    if (get.src.match("https://i.ibb.co/QYF4PQ7/Disliked-Clr.png")){
       get.src = "https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png";
     }
   }

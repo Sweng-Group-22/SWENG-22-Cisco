@@ -12,7 +12,7 @@ export default function Home() {
           <h1 className="home-title">
             WEBEX<br></br>TRANSLATE
           </h1>
-          <a href="https://i.ibb.co/fSf0pbX/Webex-Logo-Txt-Clr.png">
+          <a>
             <img className="img" src="https://i.ibb.co/fSf0pbX/Webex-Logo-Txt-Clr.png" alt="Logo" border="0" />
           </a>
         </center>

@@ -12,7 +12,8 @@ import Phrase from "./pages/Phrase";
 import GetPhrases from "./pages/GetPhrases";
 // import { useQuery } from "react-query";
 function App() {
-  
+
+  // fetch('http://localhost:8080/helloworld').then(res => res.json()).then(data=>console.log(data))
 	// Using the hook
 	
   return (

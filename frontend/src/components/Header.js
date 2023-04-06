@@ -7,7 +7,7 @@ export default function Header(){
   return(
     <> 
       <div class="navbar">
-        <Link to='/'>Translate</Link>
+        <Link to='/'>Home</Link>
           <div class="dropdown">
             <button class="dropbtn">Browse 
               <i class="fa fa-caret-down"></i>

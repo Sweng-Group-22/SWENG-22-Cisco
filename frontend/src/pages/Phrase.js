@@ -20,7 +20,7 @@ export default function Phrase() {
     <>
         <Header/>
         <div className='title'>
-            <p>Translated phrase</p>   {/* Needs to be changed after discussion with backend */}
+            <h2>Translated Phrases</h2>   {/* Needs to be changed after discussion with backend */}
         </div>
         <div class="row2">
           <div className='column2'>

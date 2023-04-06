@@ -20,7 +20,7 @@ export default function GetPhrases() {
     <>
         <Header/>
         <div className='title'>
-            <p>Get Translation</p>   {/* Needs to be changed after discussion with backend */}
+            <h2>Get Phrases</h2>   {/* Needs to be changed after discussion with backend */}
         </div>
         <div class="row3">
           <div className='column3'>

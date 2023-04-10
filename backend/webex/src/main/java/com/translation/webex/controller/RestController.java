@@ -39,7 +39,8 @@ import jakarta.servlet.http.HttpServletResponse;
 @CrossOrigin(origins = "*")
 public class RestController {
 	
-	String folder = "/usr/local/tmp/";
+	String folder = "C:\\Users\\Ameen\\Downloads";
+//			"/usr/local/tmp/";
 	
 	private static final String CSV_COLUMN_SEPARATOR = ",";
 	private static final String CSV_RN = "\r\n";

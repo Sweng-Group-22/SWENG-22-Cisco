@@ -10,15 +10,20 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.TreeMap;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.translation.webex.comp.TranslationReadWrapper;
@@ -30,13 +35,11 @@ import com.translation.webex.utils.CSVUtils;
 
 import jakarta.servlet.http.HttpServletResponse;
 
-
 @org.springframework.web.bind.annotation.RestController
 @CrossOrigin(origins = "*")
 public class RestController {
 	
-	String folder = "C:\\Users\\Ameen\\Downloads";
-//			"/usr/local/tmp/";
+	String folder = "/usr/local/tmp/";
 	
 	private static final String CSV_COLUMN_SEPARATOR = ",";
 	private static final String CSV_RN = "\r\n";
@@ -56,9 +59,111 @@ public class RestController {
 			ret.put("oper","hello world您好");
 		return ret;
 	}
+	
+	@GetMapping(value="translations")
+	public Object translates() {
+		Map<String,Object> ret = new HashMap();
+		List<Translation> translationList = translationDao.findAll();
+		List<Vote> voteList = voteDao.findAll();
+		Map<String,Translation> map = new TreeMap();
+		if(translationList != null && !translationList.isEmpty()) {
+			for(Translation t:translationList) {
+				t.setVoteList(new ArrayList());
+				map.put(t.getSegment()+"", t);
+			}
+			for(Vote v:voteList) {
+				Translation t = map.get(v.getSegment());
+				t.getVoteList().add(v);
+			}
+			ret.put("data", map);
+		}
+		ret.put("code", 200);
+		ret.put("oper","alldata");
+		return ret;
+	}
+	
+	@PostMapping(value="translates")
+	public Object translates(@RequestParam("segment")String segment,
+			@RequestParam("language")String language,
+			@RequestParam("translation")String translation) {
+		Map<String,Object> ret = new HashMap();
+		Vote t = new Vote();
+		 	t.setSegment(segment);
+		 	t.setLanguage(language);
+		 	t.setTranslation(translation);
+		 	voteDao.save(t);
+		ret.put("code", 200);
+		ret.put("oper","vote");
+		
+		return ret;
+	}
+	
+	@PostMapping(value="translations/like")
+	public Object like(@RequestParam("id")String id) {
+		Map<String,Object> ret = new HashMap();
+		ObjectId objId = new ObjectId(id);
+		Optional<Vote> t = voteDao.findById(objId);
+			if(t.isEmpty()) {
+				ret.put("code", 501);
+				ret.put("oper","comment");
+				return ret;
+			}
+			Vote v = t.get();
+			int cnt = v.getLikes() + 1;
+			v.setLikes(cnt);
+		 	voteDao.save(v);
+		ret.put("code", 200);
+		ret.put("oper","like");
+		return ret;
+	}
+	
+	@PostMapping(value="translations/dislike")
+	public Object dislike(@RequestParam("id")String id) {
+		Map<String,Object> ret = new HashMap();
+		ObjectId objId = new ObjectId(id);
+		Optional<Vote> t = voteDao.findById(objId);
+			if(t.isEmpty()) {
+				ret.put("code", 501);
+				ret.put("oper","comment");
+				return ret;
+			}
+			Vote v = t.get();
+			int cnt = v.getDislikes() + 1;
+			v.setDislikes(cnt);
+		 	voteDao.save(v);
+		ret.put("code", 200);
+		ret.put("oper","dislike");
+		return ret;
+	}
+	
+	@PostMapping(value="translations/search")
+	public Object search(@RequestParam("englishPhrase")String englishPhrase) {
+		Map<String,Object> ret = new HashMap();
+		List<Translation> res = translationReadWrapper.queryByLetter(englishPhrase);
+		Map<String,Translation> map = new TreeMap();
+		if(res != null && !res.isEmpty()) {
+			List<String> ids = new ArrayList();
+			for(Translation t:res) {
+				t.setVoteList(new ArrayList());
+				map.put(t.getSegment()+"", t);
+				ids.add(t.getSegment()+"");
+			}
+			List<Vote> voteList = voteDao.findBySegmentIn(ids);
+			if(voteList != null && !voteList.isEmpty()) {
+				for(Vote v:voteList) {
+					map.get(v.getSegment()).getVoteList().add(v);
+				}
+			}
+			
+			ret.put("data", map.values());
+		}
+		ret.put("code", 200);
+		ret.put("oper","search");
+		return ret;
+	}
+	
 	@PostMapping(value="convert")
 	public Object convert(@RequestParam("file")MultipartFile file) {
-		
 		Map<String,Object> ret = new HashMap();
 			ret.put("code", 200);
 			ret.put("oper","convert");
@@ -71,25 +176,63 @@ public class RestController {
 		}
 		return ret;
 	}
-	@PostMapping(value="add")
-	public Object add(@RequestParam("segment")Integer segment,
+	@PostMapping(value="translations/add")
+	public Object add(@RequestParam("duplicateID")Integer duplicateID,
+	        @RequestParam("englishPhrase")String englishPhrase) {
+	    Map<String,Object> ret = new HashMap();
+	    Translation t = translationDao.findByEnglishPhrase(englishPhrase);
+	    if(t != null) {
+	    	ret.put("code", 501);
+		    ret.put("oper","add");
+		    ret.put("msg", "Sorry, the english phrase has already existed!");
+		    return ret;
+	    }
+	    t = new Translation();
+        t.setEnglishPhrase(englishPhrase);
+	    t.setDuplicateID(duplicateID);
+	    translationDao.save(t);    
+	    ret.put("code", 200);
+	    ret.put("oper","add");
+	    return ret;
+	}
+	
+	
+	
+	@PostMapping(value="comment")
+	public Object comment(@RequestParam("id")String id,
 			@RequestParam("accuracy")Integer accuracy,
-			@RequestParam("englishPhrase")String englishPhrase,
-			@RequestParam("translation")String translation) {
-		
+			@RequestParam("likes")Integer likes,
+			@RequestParam("dislikes")Integer dislikes) {
 		Map<String,Object> ret = new HashMap();
-		Translation t = new Translation();
-		 	t.setSegment(segment);
-		 	t.setAccuracy(accuracy);
-		    t.setEnglishPhrase(englishPhrase);
-		    t.setTranslation(translation);
-		    translationDao.save(t);	
-		    
+		ObjectId objId = new ObjectId(id);
+		Optional<Vote> t = voteDao.findById(objId);
+			if(t.isEmpty()) {
+				ret.put("code", 501);
+				ret.put("oper","comment");
+				return ret;
+			}
+			Vote v = t.get();
+			if(accuracy != null) {
+				
+				v.setAccuracy(accuracy);
+			}
+			if(likes != null) {
+				int cnt = v.getLikes() + likes;
+				v.setLikes(cnt);
+			}
+			if(dislikes != null) {
+				int cnt = v.getDislikes() + dislikes;
+				v.setDislikes(cnt);
+			}
+		 	voteDao.save(v);
 		ret.put("code", 200);
-		ret.put("oper","add");
+		ret.put("oper","comment");
 		return ret;
 	}
-	@PostMapping(value="translate")
+	
+	
+	
+	@PostMapping(value="translations")
 	public Object translate(@RequestParam("englishPhrase")String englishPhrase) {
 		Map<String,Object> ret = new HashMap();
 		
@@ -116,9 +259,8 @@ public class RestController {
 		
 		for(Translation t:dataList) {
 			buf.append(t.getSegment()).append(CSV_COLUMN_SEPARATOR);
-			buf.append(t.getAccuracy()).append(CSV_COLUMN_SEPARATOR);
 			buf.append(t.getEnglishPhrase()).append(CSV_COLUMN_SEPARATOR);
-			buf.append(t.getTranslation()).append(CSV_RN);
+//			buf.append(t.getTranslations().get(0)).append(CSV_RN);
 		}
 		
 		try {
@@ -166,11 +308,11 @@ public class RestController {
 				if(data[0] == null || data[0].trim().length() == 0)continue;
 				if(data[3] == null || data[3].trim().length() == 0)continue;
 				Translation t = new Translation();
-						    t.setSegment(Integer.valueOf(data[0]));
+//						    t.setSegment(Integer.valueOf(data[0]));
 				if(data[3] != null || data[3].trim().length() > 0)		    
-					t.setAccuracy(Integer.valueOf(data[1]));
+//					t.setAccuracy(Integer.valueOf(data[1]));
 						    t.setEnglishPhrase(data[3]);
-						    t.setTranslation(data[4]);
+//						    t.setTranslations(Arrays.asList(data[4]));
 						    translationDao.save(t);		
 			}
 			ret.put("num", i);
@@ -183,26 +325,6 @@ public class RestController {
 		return ret;
 	}
 	
-	@PostMapping(value="vote")
-	public Object vote(@RequestParam("segment")Integer segment,
-			@RequestParam("language")String language,
-			@RequestParam("amountOfVotes")Integer amountOfVotes,
-			@RequestParam("amountOfLikes")Integer amountOfLikes,
-			@RequestParam("amountOfDislikes")Integer amountOfDislikes) {
-		Map<String,Object> ret = new HashMap();
-		Vote t = new Vote();
-		 	t.setSegment(segment);
-		 	t.setLanguage(language);
-		 	t.setAmountOfVotes(amountOfVotes);
-			t.setAmountOfLikes(amountOfLikes);
-			t.setAmountOfDislikes(amountOfDislikes);
-		 	voteDao.save(t);	
-		    
-		ret.put("code", 200);
-		ret.put("oper","vote");
-		
-		return ret;
-	}
 	@PostMapping(value="queryByLetter")
 	public Object queryByLetter(@RequestParam("englishPhrase")String englishPhrase) {
 		Map<String,Object> ret = new HashMap();

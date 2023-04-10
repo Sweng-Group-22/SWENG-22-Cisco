@@ -16,7 +16,7 @@ public class Vote {
     private String segment;
     private String language;
     private String translation;
-	private int accuracy;
+    private int accuracy;
     private int likes;
     private int dislikes;
     

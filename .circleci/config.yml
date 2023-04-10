@@ -13,6 +13,10 @@ jobs:
           name: "Gradle Build"
           command: "gradle init build"
 
+      - run:
+          name: "test"
+          command: "gradle test"
+
   frontend:
     docker:
       - image: cimg/node:19.8.1
@@ -29,8 +33,6 @@ jobs:
           name: "Run Frontend Tests (?)"
           command: "cd frontend && npm i && npm run build"
 
-workflows:
-  project-workflow:
-    jobs:
-      - backend
-      - frontend
+      - run:
+          name: "test"
+          command: "npm test"

@@ -13,9 +13,9 @@ jobs:
           name: "Gradle Build"
           command: "gradle init build"
 
-    #   - run:
-    #     name: "test"
-    #    command: "gradle test"
+      - run:
+          name: "test"
+          command: "gradle test"
 
   frontend:
     docker:
@@ -29,9 +29,9 @@ jobs:
           name: "Run Frontend Tests"
           command: "cd frontend && npm i && npm run build"
 
-    #   - run:
-    #      name: "test"
-    #     command: "npm test"
+      - run:
+          name: "test"
+          command: "npm test"
 
 workflows:
   project-workflow:

@@ -38,6 +38,7 @@
     justify-content: left;
     background-color: rgb(219, 246, 250);
     border-radius: 20px;
+    transition: 0.1s;
 }
 
 .view {
@@ -54,14 +55,17 @@
     justify-content: right;
     background-color: rgb(219, 246, 250);
     border-radius: 20px;
+    transition: 0.1s;
 }
 
 .get-phrases-box-view:hover{
     cursor: pointer;
-    transform: scale(0.96); 
+    transform: scale(0.96);
+    transition: 0.1s;
 }
 
 .get-phrases-box-suggest:hover{
     cursor: pointer;
     transform: scale(0.96); 
+    transition: 0.1s;
 }

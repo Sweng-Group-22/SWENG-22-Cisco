@@ -1,45 +1,53 @@
-.add-button-container {
-        position: sticky;
-        bottom: 10px;
-        padding: 40px;
-        display: flex;
-        justify-content: right;
-}
-
-.add-button-circle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+.add-button {
+    position: sticky;
+    width: 35px;
+    height: 35px;
+    background: rgb(14, 106, 120);
     cursor: pointer;
-    width: 80px;
-    height: 80px;
+    border: 2px solid rgb(14, 106, 120);
     border-radius: 50%;
-    background-color: rgb(14, 106, 120);
-    
+    bottom: 5%;
+    padding: 40px;
+    display: flex;
+    justify-content: right;
+    left: 92%;
+    transition: 0.1s;
+}
+  
+.add-button:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 10px;
+    width: 60%;
+    background: rgb(219, 246, 250);
+    top: 50%;
+    left: 50%;
+    border-radius: 7px;
+    transition: 0.1s;
+}
+  
+.add-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(219, 246, 250);
+    height: 60%;
+    width: 10px;
+    border-radius: 7px;
+    transition: 0.1s;
 }
 
-.add-button-circle:hover > .plus * {
-    background-color: #fff;
-    transform:scale(.98);
-    cursor: pointer;
+.add-button:hover:before,
+.add-button:hover:after {
+  background: rgb(14, 106, 120);
+  transition: 0.1s;
 }
 
-.add-button-vertical-bar {
-    background-color: rgb(219, 246, 250);
-    width: 60px;
-    height: 13px;
-    rotate: 90deg;
-    position: relative;
-    top: 6px;
-    border-radius: 7px;
-}
-.add-button-horizontal-bar {
-    background-color: rgb(219, 246, 250);
-    width: 60px;
-    height: 13px;
-    position: relative;
-    bottom: 5px;
-    border-radius: 7px;
+.add-button:hover {
+  background-color: rgb(219, 246, 250);
+  transform: scale(90%);
+  transition: 0.1s;
 }

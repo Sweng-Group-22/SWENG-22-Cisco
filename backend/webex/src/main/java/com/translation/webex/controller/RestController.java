@@ -60,7 +60,6 @@ public class RestController {
 			ret.put("oper","hello world您好");
 		return ret;
 	}
-	
 	@GetMapping(value="translations")
 	public Object translates() {
 		Map<String,Object> ret = new HashMap();
@@ -84,7 +83,7 @@ public class RestController {
 	}
 	
 	@PostMapping(value="translates")
-	public Object translates(@RequestParam("segment")String segment,
+	public Object translates(@RequestParam("segment")int segment,
 			@RequestParam("language")String language,
 			@RequestParam("translation")String translation) {
 		Map<String,Object> ret = new HashMap();

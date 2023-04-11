@@ -7,13 +7,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "vote")
 public class Vote {
     
-    public String getSegment() {
+    public int getSegment() {
 		return segment;
 	}
 
 	@Id
     private ObjectId id;
-    private String segment;
+    private int segment;
     private String language;
     private String translation;
     private int accuracy;
@@ -34,7 +34,7 @@ public class Vote {
 	public void setTranslation(String translation) {
 		this.translation = translation;
 	}
-	public void setSegment(String segment) {
+	public void setSegment(int segment) {
 		this.segment = segment;
 	}
 

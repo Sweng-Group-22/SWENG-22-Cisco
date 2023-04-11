@@ -83,7 +83,7 @@ public class RestController {
 	}
 	
 	@PostMapping(value="translates")
-	public Object translates(@RequestParam("segment")String segment,
+	public Object translates(@RequestParam("segment")int segment,
 			@RequestParam("language")String language,
 			@RequestParam("translation")String translation) {
 		Map<String,Object> ret = new HashMap();

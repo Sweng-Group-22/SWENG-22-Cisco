@@ -40,7 +40,7 @@ public class CSVUtils {
                 int likesMinusDislikes = voteList.get(0).getLikes() - voteList.get(0).getDislikes();
                 Vote highestVoted = voteList.get(0);
                 for(Vote v:voteList){
-                    if(Objects.equals(v.getSegment(), t.getSegment())){
+                    if(v.getSegment() == t.getSegment()){
                         if((v.getLikes() - v.getDislikes()) > likesMinusDislikes);
                             likesMinusDislikes = v.getLikes() - v.getDislikes();
                             highestVoted = v;

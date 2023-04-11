@@ -32,13 +32,13 @@ class Sweng22CiscoApplicationTests {
 		testVote.setAccuracy(91);
 		testVote.setLanguage("Irish");
 		testVote.setTranslation("Nuashonrú Réitithe");
-		testVote.setSegment("18");
+		testVote.setSegment(18);
 		testVote.setId(new ObjectId());
 		testVote.setLikes(500);
 		testVote.setDislikes(8);
 
 		testTranslation.setID(new ObjectId());
-		testTranslation.setSegment("18");
+		testTranslation.setSegment(18);
 		testTranslation.setEnglishPhrase("Update ready");
 		testTranslation.setDuplicateID(143784);
 		ArrayList<Vote> voteList = new ArrayList<>();

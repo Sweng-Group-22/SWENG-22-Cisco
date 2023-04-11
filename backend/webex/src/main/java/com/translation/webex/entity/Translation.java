@@ -13,7 +13,7 @@ public class Translation {
 	@Id
     private ObjectId id;
 
-    private String segment;
+    private int segment;
     private int duplicateID;
     private String englishPhrase;
     
@@ -36,11 +36,11 @@ public class Translation {
         return id;
     }
     public void setID(ObjectId id) { this.id = id; };
-    public String getSegment() {
+    public int getSegment() {
 		return segment;
 	}
 
-	public void setSegment(String segment) {
+	public void setSegment(int segment) {
 		this.segment = segment;
 	}
 

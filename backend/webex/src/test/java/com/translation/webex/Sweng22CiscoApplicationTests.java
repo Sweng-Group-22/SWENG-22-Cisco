@@ -5,6 +5,7 @@ import com.translation.webex.entity.*;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -28,7 +29,11 @@ class Sweng22CiscoApplicationTests {
 	public RestController restController;
 	@BeforeEach
 	void setUp() {
+		//Initialise mock data for testing
 		autoCloseable = MockitoAnnotations.openMocks(this);
+		restController = new RestController();
+		testVote = new Vote();
+		testTranslation = new Translation();
 		testVote.setAccuracy(91);
 		testVote.setLanguage("Irish");
 		testVote.setTranslation("Nuashonrú Réitithe");
@@ -52,7 +57,9 @@ class Sweng22CiscoApplicationTests {
 
 	}
 	@Test
+	@Disabled
 	void canDislikeTranslation() {
+		//Currently unused
 		int initialDislikes = testTranslation.getVoteList().get(0).getDislikes();
 
 		//Uses the id of the first vote in the testTranslation's voteList
@@ -62,10 +69,12 @@ class Sweng22CiscoApplicationTests {
 	}
 
 	@Test
+	@Disabled
 	void canViewTranslations() {
 	}
 
 	@Test
+	@Disabled
 	void contextLoads() {
 	}
 

@@ -37,7 +37,8 @@ class Sweng22CiscoApplicationTests {
 		testVote.setLikes(500);
 		testVote.setDislikes(8);
 
-		testTranslation.setSegment(new ObjectId());
+		testTranslation.setID(new ObjectId());
+		testTranslation.setSegment("18");
 		testTranslation.setEnglishPhrase("Update ready");
 		testTranslation.setDuplicateID(143784);
 		ArrayList<Vote> voteList = new ArrayList<>();

@@ -79,7 +79,7 @@ public class RestController {
 		}
 		ret.put("code", 200);
 		ret.put("oper","alldata");
-		return ret;
+		return voteDao.findAll() ;
 	}
 	
 	@PostMapping(value="translates")

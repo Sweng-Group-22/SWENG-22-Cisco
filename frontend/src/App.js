@@ -59,10 +59,10 @@ function App() {
           <Route path='404' element={<Page404/>}></Route>
           <Route path='phrase'>
             <Route path="*" element={<Phrase 
-                Translation1={"Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris."}
-                Translation2={"Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris."}
-                Translation3={"Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris."}
-                Translation4={"Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris."}
+                Translation1={"amet ghdgshshshshsgdgfg hdhdgdhdghdgdgfghhee hehheheehheheeehn sdhjdghjsge jdegjajgdcjks jusdhjshakuuycdukhue jdghjschudsyhjde uscghhsdh"}
+                Translation2={"suscipit"}
+                Translation3={"adipiscing bibendum"}
+                Translation4={"ultricies integer quis auctor"}
             />}/>
             <Route path="get" element={<GetPhrases/>}/>
           </Route>

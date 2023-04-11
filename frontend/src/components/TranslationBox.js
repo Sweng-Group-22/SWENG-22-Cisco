@@ -11,9 +11,9 @@ export default function Phrase(props) {
             <div className='translation-translation'>
               {props.Translation}
             </div>                           {/* Needs to be changed after discussion with backend */}
-            <div className='translation-like-dislike'><LikeDislike idn={props.idn}/></div>
+            
           </div>
-          
+          <div className='translation-like-dislike'><LikeDislike idn={props.idn}/></div>
         </div>
       </>
     )

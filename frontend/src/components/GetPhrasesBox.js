@@ -10,7 +10,7 @@ export default function GetPhrasesBox(props) {
       <div className='get-phrases-box'>
         <div className='get-phrases-box-content'>
           <div className='get-phrases-box-eng-phrase'>
-            English Phrase
+            {props.EnglishPhrase}
           </div>
           <hr class='horizontal-line'/> {/* The Thematic Break (Horizontal Rule) element. */}
           <div className='get-phrases-box-view-suggest'>

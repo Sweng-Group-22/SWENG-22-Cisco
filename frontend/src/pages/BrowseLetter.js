@@ -14,10 +14,10 @@ export default function BrowseLetter(props) {
            </div>
            <div className='browse-letter-box'>
               <div className='words'>
-                   <Link to='/phrase/phrase1'>Phrase 1</Link>
-                   <Link to='/phrase/phrase2'>Phrase 2</Link>
-                   <Link to='/phrase/phrase3'>Phrase 3</Link>
-                   <Link to='/phrase/phrase4'>Phrase 4</Link>
+                   <Link to='/phrase/phrase1'>{props.Phrase1}</Link>
+                   <Link to='/phrase/phrase2'>{props.Phrase2}</Link>
+                   <Link to='/phrase/phrase3'>{props.Phrase3}</Link>
+                   <Link to='/phrase/phrase4'>{props.Phrase4}</Link>
               </div>
            </div>
         </div>

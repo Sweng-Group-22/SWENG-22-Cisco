@@ -38,7 +38,12 @@ function App() {
             <Route path='M' element={<BrowseLetter Letter={'M'}/>}></Route>
             <Route path='N' element={<BrowseLetter Letter={'N'}/>}></Route>
             <Route path='O' element={<BrowseLetter Letter={'O'}/>}></Route>
-            <Route path='P' element={<BrowseLetter Letter={'P'}/>}></Route>
+            <Route path='P' element={<BrowseLetter Letter={'P'} 
+                Phrase1={"People"} 
+                Phrase2={"Personal Insights"} 
+                Phrase3={"Personal Room Invite"} 
+                Phrase4={"Pinned Messages"}/>}>
+            </Route>
             <Route path='Q' element={<BrowseLetter Letter={'Q'}/>}></Route>
             <Route path='R' element={<BrowseLetter Letter={'R'}/>}></Route>
             <Route path='S' element={<BrowseLetter Letter={'S'}/>}></Route>
@@ -53,7 +58,12 @@ function App() {
           <Route path='*' element={<Page404/>}></Route>
           <Route path='404' element={<Page404/>}></Route>
           <Route path='phrase'>
-            <Route path="*" element={<Phrase/>}/>
+            <Route path="*" element={<Phrase 
+                Translation1={"Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris."}
+                Translation2={"Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris."}
+                Translation3={"Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris."}
+                Translation4={"Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris."}
+            />}/>
             <Route path="get" element={<GetPhrases/>}/>
           </Route>
         </Route>

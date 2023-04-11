@@ -24,13 +24,13 @@ export default function GetPhrases() {
         </div>
         <div class="row3">
           <div className='column3'>
-            <GetPhrasesBox idn={1} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
-            <GetPhrasesBox idn={2} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
+            <GetPhrasesBox idn={1} openModal={openModal} showModal={showModal} hideModal={hideModal} EnglishPhrase={"People"}/>
+            <GetPhrasesBox idn={2} openModal={openModal} showModal={showModal} hideModal={hideModal} EnglishPhrase={"Personal Insights"}/>
           </div>
         
           <div className='column3'>
-            <GetPhrasesBox idn={3} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
-            <GetPhrasesBox idn={4} openModal={openModal} showModal={showModal} hideModal={hideModal}/>
+            <GetPhrasesBox idn={3} openModal={openModal} showModal={showModal} hideModal={hideModal} EnglishPhrase={"Personal Room Invite"}/>
+            <GetPhrasesBox idn={4} openModal={openModal} showModal={showModal} hideModal={hideModal} EnglishPhrase={"Pinned Messages"}/>
           </div>
         </div>
         

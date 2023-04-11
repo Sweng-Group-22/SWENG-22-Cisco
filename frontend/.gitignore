@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/backend
+/backend/webex/gradlew
+/backend/webex/gradlew.bat
 /.pnp
 .pnp.js
 

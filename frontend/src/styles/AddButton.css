@@ -12,6 +12,7 @@
     justify-content: right;
     left: 92%;
     transition: 0.1s;
+    margin: 1%;
 }
   
 .add-button:after {

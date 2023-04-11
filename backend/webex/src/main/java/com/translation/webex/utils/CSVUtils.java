@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -13,13 +14,14 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.translation.webex.entity.Translation;
+import com.translation.webex.entity.Vote;
 
 public class CSVUtils {
 
 	private static final String CSV_COLUMN_SEPARATOR = ",";
 	private static final String CSV_RN = "\r\n";
 	
-	public static void doExport(List<Translation> dataList,String colNames,OutputStream os) {
+	public static void doExport(List<Translation> dataList,List<Vote> voteList, String colNames,OutputStream os) {
 		try {
 			
 			String[] colNamesArr = null;
@@ -35,10 +37,19 @@ public class CSVUtils {
 			buf.append("Translation").append(CSV_RN);
 			
 			for(Translation t:dataList) {
+                int likesMinusDislikes = voteList.get(0).getLikes() - voteList.get(0).getDislikes();
+                Vote highestVoted = voteList.get(0);
+                for(Vote v:voteList){
+                    if(Objects.equals(v.getSegment(), t.getSegment())){
+                        if((v.getLikes() - v.getDislikes()) > likesMinusDislikes);
+                            likesMinusDislikes = v.getLikes() - v.getDislikes();
+                            highestVoted = v;
+                    }
+                }
 				buf.append(t.getSegment()).append(CSV_COLUMN_SEPARATOR);
-				buf.append(t.getAccuracy()).append(CSV_COLUMN_SEPARATOR);
+				buf.append(highestVoted.getAccuracy()).append(CSV_COLUMN_SEPARATOR);
 				buf.append(t.getEnglishPhrase()).append(CSV_COLUMN_SEPARATOR);
-				buf.append(t.getTranslation()).append(CSV_RN);
+				buf.append(highestVoted.getTranslation()).append(CSV_RN);
 			}
 		}catch(Exception ex) {
 			

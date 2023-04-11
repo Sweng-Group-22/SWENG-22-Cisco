@@ -60,7 +60,6 @@ public class RestController {
 			ret.put("oper","hello world您好");
 		return ret;
 	}
-	
 	@GetMapping(value="translations")
 	public Object translates() {
 		Map<String,Object> ret = new HashMap();

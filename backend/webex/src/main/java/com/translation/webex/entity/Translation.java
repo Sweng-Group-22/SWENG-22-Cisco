@@ -11,7 +11,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "translation")
 public class Translation {
 	@Id
-    private ObjectId segment;
+    private ObjectId id;
+
+    private String segment;
     private int duplicateID;
     private String englishPhrase;
     
@@ -30,12 +32,15 @@ public class Translation {
     //Query the database to find if this phrase/translation pair exists already
         return true;
     }
-   
-    public ObjectId getSegment() {
+    public ObjectId getId() {
+        return id;
+    }
+    public void setID(ObjectId id) { this.id = id; };
+    public String getSegment() {
 		return segment;
 	}
 
-	public void setSegment(ObjectId segment) {
+	public void setSegment(String segment) {
 		this.segment = segment;
 	}
 

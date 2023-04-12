@@ -340,7 +340,7 @@ public class RestController {
 				}		    
 				translationDao.save(t);
 				//ret.put("id", t.getSegment().toString());
-				String seg = t.getSegment()+"";
+				int seg = t.getSegment();
 				if(data[4] != null && data[4].trim().length() >0) {
 					Vote v= new Vote();
 					v.setTranslation(data[4].trim());
@@ -366,6 +366,7 @@ public class RestController {
 		}
 		return ret;
 	}
+	
 	
 	
 	@PostMapping(value="queryByLetter")

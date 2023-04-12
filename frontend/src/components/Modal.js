@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Modal.css'
 import '../styles/CloseButton.css'
 import SubmitTranslation from './Submit'
 import CancelTranslation from './Cancel'
 import '../styles/Modal.css'
-
+import { useMutation } from 'react-query'
+import { addTranslation } from '../api/Translation'
 
 export default function Modal(props) {
+  const [newTranslation, setNewTranslation] = useState('')
+  
+  function handleChange(result){
+    setNewTranslation(result)
+  }
+  const addNewTranslationMutation = useMutation({
+    mutationFn: addTranslation
+  })
+  function sumitTranslation(){
+   addNewTranslationMutation.mutate({
+    segment: 52355,
+    language: 'German',
+    translation: newTranslation
+   })
+  } 
+  if(addNewTranslationMutation.isError){console.log(addNewTranslationMutation.error)}
   return (
     <>
       <div id='t-modal' className='modal-container'>
@@ -20,7 +37,7 @@ export default function Modal(props) {
           </select>
         </div>
         <div className='modal-translation'><label className='modal-label'>Translation:</label>
-        <textarea className='modal-textarea' />
+        <textarea className='modal-textarea' onChange={(e)=>handleChange(e.target.value)}/>
         </div>
         
         <div className='modal-buttons'>
@@ -32,7 +49,7 @@ export default function Modal(props) {
         
 
           {/* <button onClick={props.hideModal}>Cancel</button> */}
-          <CancelTranslation hideModal={props.hideModal}/>
+          <CancelTranslation hideModal={sumitTranslation}/>
           <SubmitTranslation/>
         {/* </center> */}
       </div>

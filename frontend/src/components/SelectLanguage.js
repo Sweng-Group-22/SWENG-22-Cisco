@@ -15,5 +15,5 @@ export default function SelectLanguage(){
             </Dropdown>
             <br/>
         </div>
-    );g
+    );
 }

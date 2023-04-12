@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import '../styles/Modal.css'
-import '../styles/CloseButton.css'
 import SubmitTranslation from './Submit'
 import CancelTranslation from './Cancel'
 import '../styles/Modal.css'
@@ -45,8 +44,7 @@ export default function Modal(props) {
         
 
           {/* <button onClick={props.hideModal}>Cancel</button> */}
-          <CancelTranslation hideModal={sumitTranslation}/>
-          <SubmitTranslation/>
+          <SubmitTranslation hideModal={props.hideModal}/>
         {/* </center> */}
       </div>
       </div>

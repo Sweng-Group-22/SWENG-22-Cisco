@@ -10,8 +10,8 @@ import Page404 from './pages/404';
 import BrowseLetter from "./pages/BrowseLetter";
 import Phrase from "./pages/Phrase";
 import GetPhrases from "./pages/GetPhrases";
-import { useQuery, useMutation } from "react-query";
-import { getTranslations } from './api/Translation';
+//import { useQuery, useMutation } from "react-query";
+//import { getTranslations } from './api/Translation';
 function App() {
 
   

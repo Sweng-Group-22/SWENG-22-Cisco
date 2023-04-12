@@ -17,11 +17,7 @@ export default function Modal(props) {
     mutationFn: addTranslation
   })
   function sumitTranslation(){
-   addNewTranslationMutation.mutate({
-    segment: 52355,
-    language: 'German',
-    translation: newTranslation
-   })
+   addTranslation(299,'German',newTranslation)
   } 
   if(addNewTranslationMutation.isError){console.log(addNewTranslationMutation.error)}
   return (

@@ -24,10 +24,18 @@ export async function addDislike(id,decrement){
 }
 
 export async function addTranslation(segment,language,translation){
-    const res = await Axios.post('http:localhost:8080/translate',{
-        segment: segment,
-        language: language,
-        translation: translation
-    })
+    const res = await Axios
+	.post('http://localhost:8080/translates', {
+		// Data to be sent to the server
+		segment: segment,
+		language: language,
+		translation: translation
+	})
+	.then(response => {
+		console.log(response.data);
+	})
+	.catch(function (error) {
+		console.error(error);
+	});
     return res
 }

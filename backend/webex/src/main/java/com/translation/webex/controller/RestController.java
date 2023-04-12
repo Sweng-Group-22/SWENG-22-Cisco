@@ -32,6 +32,7 @@ import com.translation.webex.dao.TranslationDao;
 import com.translation.webex.dao.VoteDao;
 import com.translation.webex.entity.Translation;
 import com.translation.webex.entity.Vote;
+import com.translation.webex.entity.NewTranslation;
 import com.translation.webex.utils.CSVUtils;
 
 import jakarta.servlet.http.HttpServletResponse;

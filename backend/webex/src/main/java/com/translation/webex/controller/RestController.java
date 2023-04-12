@@ -99,41 +99,57 @@ public class RestController {
 	}
 	
 	@PostMapping(value="translations/like")
-	public Object like(@RequestParam("id")String id) {
-		Map<String,Object> ret = new HashMap();
-		ObjectId objId = new ObjectId(id);
-		Optional<Vote> t = voteDao.findById(objId);
-			if(t.isEmpty()) {
-				ret.put("code", 501);
-				ret.put("oper","comment");
-				return ret;
-			}
-			Vote v = t.get();
-			int cnt = v.getLikes() + 1;
-			v.setLikes(cnt);
-		 	voteDao.save(v);
-		ret.put("code", 200);
-		ret.put("oper","like");
-		return ret;
+	public Object like(@RequestParam("id") String id, @RequestParam(value = "dec", required = false, defaultValue = "false") boolean decrement) {
+	    Map<String,Object> ret = new HashMap();
+	    ObjectId objId = new ObjectId(id);
+	    Optional<Vote> t = voteDao.findById(objId);
+	    if(t.isEmpty()) {
+	        ret.put("code", 501);
+	        ret.put("oper","comment");
+	        return ret;
+	    }
+	    Vote v = t.get();
+	    int cnt = v.getLikes();
+	    if(decrement) {
+	        cnt--;
+	        if(cnt < 0) {
+	            cnt = 0;
+	        }
+	    } else {
+	        cnt++;
+	    }
+	    v.setLikes(cnt);
+	    voteDao.save(v);
+	    ret.put("code", 200);
+	    ret.put("oper","like");
+	    return ret;
 	}
-	
+
 	@PostMapping(value="translations/dislike")
-	public Object dislike(@RequestParam("id")String id) {
-		Map<String,Object> ret = new HashMap();
-		ObjectId objId = new ObjectId(id);
-		Optional<Vote> t = voteDao.findById(objId);
-			if(t.isEmpty()) {
-				ret.put("code", 501);
-				ret.put("oper","comment");
-				return ret;
-			}
-			Vote v = t.get();
-			int cnt = v.getDislikes() + 1;
-			v.setDislikes(cnt);
-		 	voteDao.save(v);
-		ret.put("code", 200);
-		ret.put("oper","dislike");
-		return ret;
+	public Object dislike(@RequestParam("id") String id, @RequestParam(value = "dec", required = false, defaultValue = "false") boolean decrement) {
+	    Map<String,Object> ret = new HashMap();
+	    ObjectId objId = new ObjectId(id);
+	    Optional<Vote> t = voteDao.findById(objId);
+	    if(t.isEmpty()) {
+	        ret.put("code", 501);
+	        ret.put("oper","comment");
+	        return ret;
+	    }
+	    Vote v = t.get();
+	    int cnt = v.getDislikes();
+	    if(decrement) {
+	        cnt--;
+	        if(cnt < 0) {
+	            cnt = 0;
+	        }
+	    } else {
+	        cnt++;
+	    }
+	    v.setDislikes(cnt);
+	    voteDao.save(v);
+	    ret.put("code", 200);
+	    ret.put("oper","dislike");
+	    return ret;
 	}
 	
 	@PostMapping(value="translations/search")

@@ -68,16 +68,16 @@ public class RestController {
 		Map<String,Translation> map = new TreeMap();
 		if(translationList != null && !translationList.isEmpty()) {
 			for(Translation t:translationList) {
-				if (t.getVoteList[0].getLanguage.equals(language)){
+			//	if (t.getVoteList[0].getLanguage.equals(language)){
 					t.setVoteList(new ArrayList());
 					map.put(t.getSegment()+"", t);
-				}				
+			//	}				
 			}
 			for(Vote v:voteList) {
-				if (v.getLanguage.equals(language)){
+				//if (v.getLanguage.equals(language)){
 					Translation t = map.get(v.getSegment());
 					t.getVoteList().add(v);
-				}
+			//	}
 			}
 			ret.put("data", map);
 		}

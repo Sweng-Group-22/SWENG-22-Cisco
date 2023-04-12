@@ -61,19 +61,23 @@ public class RestController {
 		return ret;
 	}
 	@GetMapping(value="translations")
-	public Object translates() {
+	public Object translates(@RequestParam("language")String language) {
 		Map<String,Object> ret = new HashMap();
 		List<Translation> translationList = translationDao.findAll();
 		List<Vote> voteList = voteDao.findAll();
 		Map<String,Translation> map = new TreeMap();
 		if(translationList != null && !translationList.isEmpty()) {
 			for(Translation t:translationList) {
-				t.setVoteList(new ArrayList());
-				map.put(t.getSegment()+"", t);
+				if (t.getVoteList[0].getLanguage.equals(language)){
+					t.setVoteList(new ArrayList());
+					map.put(t.getSegment()+"", t);
+				}				
 			}
 			for(Vote v:voteList) {
-				Translation t = map.get(v.getSegment());
-				t.getVoteList().add(v);
+				if (v.getLanguage.equals(language)){
+					Translation t = map.get(v.getSegment());
+					t.getVoteList().add(v);
+				}
 			}
 			ret.put("data", map);
 		}

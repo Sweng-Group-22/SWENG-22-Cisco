@@ -45,8 +45,8 @@ export default function Modal(props) {
         
 
           {/* <button onClick={props.hideModal}>Cancel</button> */}
-          <CancelTranslation hideModal={sumitTranslation}/>
-          <SubmitTranslation/>
+          <CancelTranslation hideModal={sumitTranslation}  />
+          <SubmitTranslation disable={newTranslation} />
         {/* </center> */}
       </div>
       </div>

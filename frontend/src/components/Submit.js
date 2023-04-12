@@ -3,7 +3,7 @@ import '../styles/Submit.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function SubmitTranslation() {   
+export default function SubmitTranslation(props) {   
 
     const [submitted, setSubmit] = useState(false)
 
@@ -19,7 +19,7 @@ export default function SubmitTranslation() {
     return (
         <>
             <div className = 'SubmitTranslation'>
-                <button className = 'submit' onClick = {submitFunction}>Submit</button>
+                <button className = 'submit' disabled={!props.disable} onClick = {submitFunction}>Submit</button>
                 <ToastContainer />
             </div>
         </>

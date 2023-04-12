@@ -10,12 +10,14 @@ import Page404 from './pages/404';
 import BrowseLetter from "./pages/BrowseLetter";
 import Phrase from "./pages/Phrase";
 import GetPhrases from "./pages/GetPhrases";
-// import { useQuery } from "react-query";
+import { useQuery } from "react-query";
+import { getTranslations } from './api/Translation';
 function App() {
 
-  // fetch('http://localhost:8080/helloworld').then(res => res.json()).then(data=>console.log(data))
+  
 	// Using the hook
-	
+  // const translations = useQuery(['translations'], getTranslations)
+	// console.log(translations.data)
   return (
     <>
       <Routes>

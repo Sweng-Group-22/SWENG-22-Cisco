@@ -4,7 +4,7 @@ import Axios from 'axios'
 
 export async function getTranslations(){
     const res = await Axios.get('http://localhost:8080/translations')
-    return res.data
+    return res
 }
 
 export async function addLike(id,decrement){
@@ -12,7 +12,7 @@ export async function addLike(id,decrement){
         id: id,
         dec: decrement
     })
-    return res.data
+    return res
 }
 
 export async function addDislike(id,decrement){
@@ -20,5 +20,14 @@ export async function addDislike(id,decrement){
         id: id,
         dec: decrement
     })
-    return res.data
+    return res
+}
+
+export async function addTranslation(segment,language,translation){
+    const res = await Axios.post('http:localhost:8080/translate',{
+        segment: segment,
+        language: language,
+        translation: translation
+    })
+    return res
 }

@@ -160,13 +160,13 @@ public class RestController {
 	public Object search(@RequestParam("englishPhrase")String englishPhrase) {
 		Map<String,Object> ret = new HashMap();
 		List<Translation> res = translationReadWrapper.queryByLetter(englishPhrase);
-		Map<String,Translation> map = new TreeMap();
+		Map<Integer,Translation> map = new TreeMap();
 		if(res != null && !res.isEmpty()) {
-			List<String> ids = new ArrayList();
+			List<Integer> ids = new ArrayList();
 			for(Translation t:res) {
 				t.setVoteList(new ArrayList());
-				map.put(t.getSegment()+"", t);
-				ids.add(t.getSegment()+"");
+				map.put(t.getSegment(), t);
+				ids.add(t.getSegment());
 			}
 			List<Vote> voteList = voteDao.findBySegmentIn(ids);
 			if(voteList != null && !voteList.isEmpty()) {

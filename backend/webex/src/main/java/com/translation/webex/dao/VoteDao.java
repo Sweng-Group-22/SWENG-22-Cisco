@@ -11,6 +11,7 @@ public interface VoteDao extends MongoRepository<Vote, ObjectId> {
 
 	Vote findBySegmentAndLanguage(int segment,String language);
 	
-	
 	List<Vote> findBySegmentIn(List<Integer> seg);
+
+	List<Vote> findAllByLanguage(String language);
 }

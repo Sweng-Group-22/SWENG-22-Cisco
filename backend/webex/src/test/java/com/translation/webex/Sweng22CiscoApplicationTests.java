@@ -78,5 +78,16 @@ class Sweng22CiscoApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	@Disabled
+	void canViewAllTranslations{		
+	}
+
+	@Test 
+	@Disabled
+	void canAddNewTranlations{
+		
+	}
+
 
 }

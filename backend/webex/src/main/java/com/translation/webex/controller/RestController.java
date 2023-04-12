@@ -331,7 +331,7 @@ public class RestController {
 				
 				Translation t = new Translation();
 							t.setEnglishPhrase(data[3]+"");
-//						    t.setSegment(Integer.valueOf(data[0]));
+						    t.setSegment(Integer.valueOf(data[0]));
 				
 				if(data.length>7 &&data[7] != null && data[7].trim().length() > 0) {
 					try {

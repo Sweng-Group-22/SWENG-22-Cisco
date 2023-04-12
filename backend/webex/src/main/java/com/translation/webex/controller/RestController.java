@@ -298,6 +298,7 @@ public class RestController {
 				}
 		}
 	}
+
 	@PostMapping(value="import")
 	public Object imp(@RequestParam("file")MultipartFile file) {
 		
@@ -321,15 +322,36 @@ public class RestController {
 				if(i++ == 1)continue;
 				System.out.println(line);
 				String[] data = line.split(",",-1);
-				if(data[0] == null || data[0].trim().length() == 0)continue;
+				if(data[1] == null || data[1].trim().length() == 0)continue;
 				if(data[3] == null || data[3].trim().length() == 0)continue;
+				
 				Translation t = new Translation();
+							t.setEnglishPhrase(data[3]+"");
 //						    t.setSegment(Integer.valueOf(data[0]));
-				if(data[3] != null || data[3].trim().length() > 0)		    
+				
+				if(data.length>7 &&data[7] != null && data[7].trim().length() > 0) {
+					try {
+					t.setDuplicateID(Integer.valueOf(data[7]));
+					}catch(Exception ex) {}
+				}		    
+				translationDao.save(t);
+				//ret.put("id", t.getSegment().toString());
+				String seg = t.getSegment()+"";
+				if(data[4] != null && data[4].trim().length() >0) {
+					Vote v= new Vote();
+					v.setTranslation(data[4].trim());
+					v.setSegment(seg);
+					v.setLanguage("Irish");
+					try {
+						v.setAccuracy(Integer.valueOf(data[1].trim()));
+					}catch(Exception ex) {}
+					voteDao.save(v);
+				}
+				//return ret;
 //					t.setAccuracy(Integer.valueOf(data[1]));
-						    t.setEnglishPhrase(data[3]);
+						    //t.setEnglishPhrase(data[3]);
 //						    t.setTranslations(Arrays.asList(data[4]));
-						    translationDao.save(t);		
+						    //translationDao.save(t);		
 			}
 			ret.put("num", i);
 			ret.put("code", 200);
@@ -340,6 +362,7 @@ public class RestController {
 		}
 		return ret;
 	}
+	
 	
 	@PostMapping(value="queryByLetter")
 	public Object queryByLetter(@RequestParam("englishPhrase")String englishPhrase) {

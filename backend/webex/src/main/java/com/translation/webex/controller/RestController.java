@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.translation.webex.comp.TranslationReadWrapper;
@@ -60,30 +61,18 @@ public class RestController {
 			ret.put("oper","hello world您好");
 		return ret;
 	}
-	@GetMapping(value="translations")
-	public Object translates(@RequestParam("language")String language) {
+	@PostMapping(value="translates")
+	public Object translates(@RequestBody NewTranslation n) {
 		Map<String,Object> ret = new HashMap();
-		List<Translation> translationList = translationDao.findAll();
-		List<Vote> voteList = voteDao.findAll();
-		Map<String,Translation> map = new TreeMap();
-		if(translationList != null && !translationList.isEmpty()) {
-			for(Translation t:translationList) {
-			//	if (t.getVoteList[0].getLanguage.equals(language)){
-					t.setVoteList(new ArrayList());
-					map.put(t.getSegment()+"", t);
-			//	}				
-			}
-			for(Vote v:voteList) {
-				//if (v.getLanguage.equals(language)){
-					Translation t = map.get(v.getSegment());
-					t.getVoteList().add(v);
-			//	}
-			}
-			ret.put("data", map);
-		}
+		Vote t = new Vote();
+		 	t.setSegment(n.getSegment());
+		 	t.setLanguage(n.getLanguage());
+		 	t.setTranslation(n.getTranslation());
+		 	voteDao.save(t);
 		ret.put("code", 200);
-		ret.put("oper","alldata");
-		return voteDao.findAll() ;
+		ret.put("oper","vote");
+		
+		return ret;
 	}
 	
 	@PostMapping(value="translates")

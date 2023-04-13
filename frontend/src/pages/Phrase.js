@@ -17,6 +17,7 @@ export default function Phrase(props) {
   }
 
   return (
+
     <>
         <Header/>
         <div className='title'>

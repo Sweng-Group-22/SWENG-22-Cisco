@@ -4,7 +4,6 @@
 import WordTranslations from './pages/WordTranslations';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Page404 from './pages/404';
 // import LetterLine from './components/LetterLine';
 // import AddButton from './components/AddButton';
 import BrowseLetter from "./pages/BrowseLetter";
@@ -33,8 +32,6 @@ function App() {
               return <Route path={letter} element={<BrowseLetter Letter={letter} setPhrase={setPhrase}/>}></Route>
             })}
           </Route>
-          <Route path='*' element={<Page404/>}></Route>
-          <Route path='404' element={<Page404/>}></Route>
           <Route path='phrase'>
             <Route path="*" element={<Phrase phrase={phrase}/>}/>
             <Route path="get" element={<GetPhrases/>}/>

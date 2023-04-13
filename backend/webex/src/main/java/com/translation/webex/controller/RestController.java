@@ -213,41 +213,6 @@ public class RestController {
 	}
 	
 	
-	
-	@PostMapping(value="comment")
-	public Object comment(@RequestParam("id")String id,
-			@RequestParam("accuracy")Integer accuracy,
-			@RequestParam("likes")Integer likes,
-			@RequestParam("dislikes")Integer dislikes) {
-		Map<String,Object> ret = new HashMap();
-		ObjectId objId = new ObjectId(id);
-		Optional<Vote> t = voteDao.findById(objId);
-			if(t.isEmpty()) {
-				ret.put("code", 501);
-				ret.put("oper","comment");
-				return ret;
-			}
-			Vote v = t.get();
-			if(accuracy != null) {
-				
-				v.setAccuracy(accuracy);
-			}
-			if(likes != null) {
-				int cnt = v.getLikes() + likes;
-				v.setLikes(cnt);
-			}
-			if(dislikes != null) {
-				int cnt = v.getDislikes() + dislikes;
-				v.setDislikes(cnt);
-			}
-		 	voteDao.save(v);
-		ret.put("code", 200);
-		ret.put("oper","comment");
-		return ret;
-	}
-	
-	
-	
 	@PostMapping(value="translations")
 	public Object translate(@RequestParam("englishPhrase")String englishPhrase) {
 		Map<String,Object> ret = new HashMap();

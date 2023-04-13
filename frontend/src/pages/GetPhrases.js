@@ -4,7 +4,8 @@ import Footer from '../components/Footer'
 import GetPhrasesBox from '../components/GetPhrasesBox'
 import '../styles/GetPhrases.css'
 import { useState } from 'react'
-
+import { useQuery } from 'react-query'
+import { getTranslations } from '../api/Translation'
 
 export default function GetPhrases() {
 
@@ -15,7 +16,11 @@ export default function GetPhrases() {
   function hideModal() {
     if(openModal===true) setOpenModal(false);
   }
-  
+
+  // function usePhrases(letter){ return useQuery(['phrases', letter], () => getTranslations(letter))}
+  // const {data} = usePhrases('')
+  // console.log(data.data)
+
   return (
     <>
         <Header/>

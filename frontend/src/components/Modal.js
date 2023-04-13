@@ -37,6 +37,7 @@ export default function Modal(props) {
         
         <div className='modal-buttons'>'
           {/* <button onClick={props.hideModal}>Cancel</button> */}
+          <CancelTranslation hideModal={props.hideModal}/>
           <SubmitTranslation hideModal={props.hideModal}/>
         </div>
       </div>

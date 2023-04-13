@@ -2,7 +2,7 @@
 import  axios from 'axios'
 
 // Retrieves translated phrases by language
-export async function getTranslations(language){
+export async function getTranslations({language}){
     const res = await axios.get(`http://localhost:8080/vote?language=${language}`, {
         language:language
     })
@@ -13,7 +13,7 @@ export async function getTranslations(language){
 
 
 // Modify the Like
-export async function addLike(id,decrement){
+export async function addLike({id,decrement}){
     const res = await axios.post('https:localhost:8080/translations/like', {
         id: id,
         dec: decrement
@@ -21,7 +21,7 @@ export async function addLike(id,decrement){
     return res
 }
 // Modify the Dislike
-export async function addDislike(id,decrement){
+export async function addDislike({id,decrement}){
     const res = await axios.post('https:localhost:8080/translations/like', {
         id: id,
         dec: decrement

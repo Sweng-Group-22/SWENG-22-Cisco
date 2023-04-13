@@ -3,7 +3,12 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 import '../styles/BrowseLetter.css'
+import {useQuery} from 'react-query'
+import { searchTranslation } from '../api/Translation'
 export default function BrowseLetter(props) {
+   const {data } = useQuery(['browse',props.Letter],()=>searchTranslation(props.Letter))
+   console.log(data)
+
   return (
     <>
         

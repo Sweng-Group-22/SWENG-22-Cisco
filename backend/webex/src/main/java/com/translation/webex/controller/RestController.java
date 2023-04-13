@@ -76,7 +76,7 @@ public class RestController {
 		return ret;
 	}
 	
-	@GetMapping(value="translations")
+	@GetMapping(value="vote")
         public Object translates(@RequestParam("language") String language) {
         Map<String,Object> ret = new HashMap();
         List<Translation> translationList = translationDao.findAll();
@@ -87,11 +87,11 @@ public class RestController {
                 t.setVoteList(new ArrayList());
                 map.put(t.getSegment(), t);
             }
-            for(Vote v:voteList) {
-                Translation t = map.get(v.getSegment());
-                t.getVoteList().add(v);
-            }
-            ret.put("data", map);
+            // for(Vote v:voteList) {
+            //     Translation t = map.get(v.getSegment());
+            //     t.getVoteList().add(v);
+            // }
+            ret.put("data", voteList);
         }
         ret.put("code", 200);
         ret.put("oper","alldata");

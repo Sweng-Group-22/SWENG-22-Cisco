@@ -20,11 +20,11 @@ export default function Phrase(props) {
     <>
         <Header/>
         <div className='title'>
-            <h2>Translated Phrases</h2>   {/* Needs to be changed after discussion with backend */}
+            <h2>{props.phrase.englishPhrase}</h2>   {/* Needs to be changed after discussion with backend */}
         </div>
         <div class="row2">
           <div className='column2'>
-            <TranslationBox idn={1} Translation={props.Translation1} likes={54} dislikes={17}/>
+            <TranslationBox idn={1} Translation={props.phrase.voteList[0].translation} likes={54} dislikes={17}/>
             <TranslationBox idn={2} Translation={props.Translation2} likes={12} dislikes={11}/>
           </div>
           

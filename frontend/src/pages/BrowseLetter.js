@@ -21,8 +21,8 @@ export default function BrowseLetter(props) {
            </div>
            <div className='browse-letter-box'>
               <div className='words'>{
-               data.data.map(listItem =>{
-                  return <Link to='/phrase/phrase1'>{listItem.englishPhrase}</Link>
+               data?.data.map(listItem =>{
+                  return <Link to={`/phrase/${listItem.englishPhrase}`}>{listItem.englishPhrase}</Link>
                })
               }
                    

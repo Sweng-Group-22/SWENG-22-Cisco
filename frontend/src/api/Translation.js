@@ -47,7 +47,7 @@ export async function addTranslation({segment,language,translation}){
     return res
 }
 
-export async function searchTranslation({englishPhrase}){
+export async function searchTranslation(englishPhrase){
     const res = await axios.get(`http://localhost:8080/translations/search?englishPhrase=${englishPhrase}`)
     return res.data
 }

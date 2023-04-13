@@ -18,11 +18,13 @@ export default function BrowseLetter(props) {
               <p>{props.Letter}</p>
            </div>
            <div className='browse-letter-box'>
-              <div className='words'>
-                   <Link to='/phrase/phrase1'>{props.Phrase1}</Link>
-                   <Link to='/phrase/phrase2'>{props.Phrase2}</Link>
-                   <Link to='/phrase/phrase3'>{props.Phrase3}</Link>
-                   <Link to='/phrase/phrase4'>{props.Phrase4}</Link>
+              <div className='words'>{
+               data.data.map(listItem =>{
+                  return <Link to='/phrase/phrase1'>{listItem.englishPhrase}</Link>
+               })
+              }
+                   
+                   
               </div>
            </div>
         </div>

@@ -4,7 +4,8 @@ img{
 }
 
 .like-box {
-    width: 140px;
+    display: flex;
+    width: 160px;
     height: 45px;
     border-radius: 30px;
     background-color: rgb(219, 246, 250);

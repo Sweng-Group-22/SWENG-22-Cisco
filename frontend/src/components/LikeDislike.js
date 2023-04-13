@@ -4,6 +4,8 @@ import '../styles/LikeDislike.css'
 
 export default function LikeDislike(props) {
 
+  
+
   const [likeActive, setLikeActive] = useState(false)
   const [dislikeActive, setDislikeActive] = useState(false)
 
@@ -14,14 +16,17 @@ export default function LikeDislike(props) {
     if(likeActive){                // unlike
       setLikeActive(false)
       setLikeCount(likeCount-1)
+      addLike(props.idn, true)
       unsetLike();
     }                            
     else{                          // like
       setLikeActive(true)
       setLikeCount(likeCount+1)
+      addLike(props.idn, false)
       if(dislikeActive){
         setDislikeActive(false)
         setDislikeCount(dislikeCount-1)
+        addDislike(props.idn, true)
         unsetDislike();
       }
       setLike();
@@ -32,14 +37,17 @@ export default function LikeDislike(props) {
     if(dislikeActive){             // undo dislike
       setDislikeActive(false)
       setDislikeCount(dislikeCount-1)
+      addDislike(props.idn, true)
       unsetDislike();
     }
     else{                          // dislike
       setDislikeActive(true)
       setDislikeCount(dislikeCount+1)
+      addDislike(props.idn, false)
       if(likeActive){
         setLikeActive(false)
         setLikeCount(likeCount-1)
+        addDislike(props.idn, true)
         unsetLike();
       }
       setDislike();

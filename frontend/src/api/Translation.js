@@ -14,7 +14,7 @@ export async function getTranslations({language}){
 
 // Modify the Like
 export async function addLike({id,decrement}){
-    const res = await axios.post('https:localhost:8080/translations/like', {
+    const res = await axios.post('https://localhost:8080/translations/like', {
         id: id,
         dec: decrement
     })
@@ -22,7 +22,7 @@ export async function addLike({id,decrement}){
 }
 // Modify the Dislike
 export async function addDislike({id,decrement}){
-    const res = await axios.post('https:localhost:8080/translations/like', {
+    const res = await axios.post('https://localhost:8080/translations/dislike', {
         id: id,
         dec: decrement
     })

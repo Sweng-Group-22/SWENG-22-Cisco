@@ -24,13 +24,13 @@ export default function Phrase(props) {
         </div>
         <div class="row2">
           <div className='column2'>
-            <TranslationBox idn={1} Translation={props.Translation1}/>
-            <TranslationBox idn={2} Translation={props.Translation2}/>
+            <TranslationBox idn={1} Translation={props.Translation1} likes={54} dislikes={17}/>
+            <TranslationBox idn={2} Translation={props.Translation2} likes={12} dislikes={11}/>
           </div>
           
           <div className='column2'>
-            <TranslationBox idn={3} Translation={props.Translation3}/>
-            <TranslationBox idn={4} Translation={props.Translation4}/>
+            <TranslationBox idn={3} Translation={props.Translation3} likes={23} dislikes={14}/>
+            <TranslationBox idn={4} Translation={props.Translation4} likes={6} dislikes={2}/>
           </div>
         </div>
         

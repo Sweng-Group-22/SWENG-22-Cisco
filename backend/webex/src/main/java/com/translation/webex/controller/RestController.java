@@ -76,21 +76,27 @@ public class RestController {
 		return ret;
 	}
 	
-	@PostMapping(value="translates")
-	public Object translates(@RequestParam("segment")int segment,
-			@RequestParam("language")String language,
-			@RequestParam("translation")String translation) {
-		Map<String,Object> ret = new HashMap();
-		Vote t = new Vote();
-		 	t.setSegment(segment);
-		 	t.setLanguage(language);
-		 	t.setTranslation(translation);
-		 	voteDao.save(t);
-		ret.put("code", 200);
-		ret.put("oper","vote");
-		
-		return ret;
-	}
+	@GetMapping(value="translations")
+        public Object translates(@RequestParam("language") String language) {
+        Map<String,Object> ret = new HashMap();
+        List<Translation> translationList = translationDao.findAll();
+        List<Vote> voteList = voteDao.findAllByLanguage(language);
+        Map<Integer,Translation> map = new TreeMap();
+        if(translationList != null && !translationList.isEmpty()) {
+            for(Translation t:translationList) {
+                t.setVoteList(new ArrayList());
+                map.put(t.getSegment(), t);
+            }
+            for(Vote v:voteList) {
+                Translation t = map.get(v.getSegment());
+                t.getVoteList().add(v);
+            }
+            ret.put("data", map);
+        }
+        ret.put("code", 200);
+        ret.put("oper","alldata");
+        return ret;
+        }
 	
 	@PostMapping(value="translations/like")
 	public Object like(@RequestParam("id") String id, @RequestParam(value = "dec", required = false, defaultValue = "false") boolean decrement) {

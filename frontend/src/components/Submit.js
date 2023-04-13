@@ -19,7 +19,8 @@ export default function SubmitTranslation({hideModal}) {
     return (
         <>
             <div className = 'SubmitTranslation'>
-                <button className = 'submit' onClick = {hideModal}>Submit</button>
+                <button className = 'submit' onClick = {submitFunction}>Submit</button>
+                <ToastContainer />
             </div>
         </>
     )

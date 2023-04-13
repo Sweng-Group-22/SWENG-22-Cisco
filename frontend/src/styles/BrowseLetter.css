@@ -22,9 +22,11 @@
 }
 .words{
     margin: 50px;
-    display:flex;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     padding:4px;
-    justify-content: space-between;
     font-size: 24px;
     font-weight: 600;
+    color: rgb(14, 106, 120);
 }

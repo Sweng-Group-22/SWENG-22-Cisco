@@ -35,18 +35,10 @@ export default function Modal(props) {
         <textarea className='modal-textarea' onChange={(e)=>handleChange(e.target.value)}/>
         </div>
         
-        <div className='modal-buttons'>
-          
-          {/* <button type='submit'>Submit</button> */}
-        </div>
-        {/* <center> */}
         <div className='modal-buttons'>'
-        
-
           {/* <button onClick={props.hideModal}>Cancel</button> */}
           <SubmitTranslation hideModal={props.hideModal}/>
-        {/* </center> */}
-      </div>
+        </div>
       </div>
     </>
   )

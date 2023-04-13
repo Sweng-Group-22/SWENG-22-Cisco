@@ -43,9 +43,8 @@
 .modal-buttons {
     display: flex;
     align-items: center;
-    margin-left: -320px;
     margin-top: -5px;
-    justify-content: space-around;
+    justify-content:center;
 }
 
 .modal-english-phrase {

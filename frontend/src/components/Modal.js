@@ -6,7 +6,7 @@ import '../styles/Modal.css'
 import { useMutation } from 'react-query'
 import { addTranslation } from '../api/Translation'
 
-export default function Modal(props) {
+export default function Modal({hideModal}) {
   const [newTranslation, setNewTranslation] = useState('')
   
   function handleChange(result){
@@ -15,12 +15,18 @@ export default function Modal(props) {
   const addNewTranslationMutation = useMutation({
     mutationFn: addTranslation
   })
-  function sumitTranslation(){
-   addTranslation(299,'German',newTranslation)
+  function sumitTranslation(e){
+    e.preventDefault()
+    addNewTranslationMutation.mutate({
+      segment:898,
+      language:"Yourba",
+      translation:newTranslation
+    })
+    hideModal()
   } 
   if(addNewTranslationMutation.isError){console.log(addNewTranslationMutation.error)}
   return (
-    <>
+    <> <form onSubmit={(e)=>sumitTranslation(e)}>
       <div id='t-modal' className='modal-container'>
         <h className='modal-english-phrase'>Add Translation</h>
         <div className='modal-language-container'>
@@ -37,10 +43,10 @@ export default function Modal(props) {
         
         <div className='modal-buttons'>'
           {/* <button onClick={props.hideModal}>Cancel</button> */}
-          <CancelTranslation hideModal={props.hideModal}/>
-          <SubmitTranslation hideModal={props.hideModal}/>
+          <CancelTranslation hideModal={hideModal}/>
+          <SubmitTranslation />
         </div>
-      </div>
+      </div></form>
     </>
   )
   

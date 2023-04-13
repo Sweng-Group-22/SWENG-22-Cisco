@@ -1,9 +1,9 @@
 //import axios from 'axios'
-import Axios from 'axios'
+import  axios from 'axios'
 
 // Retrieves translated phrases by language
 export async function getTranslations(language){
-    const res = await Axios.get(`http://localhost:8080/vote?language=${language}`, {
+    const res = await axios.get(`http://localhost:8080/vote?language=${language}`, {
         language:language
     })
     return res.data
@@ -14,7 +14,7 @@ export async function getTranslations(language){
 
 // Modify the Like
 export async function addLike(id,decrement){
-    const res = await Axios.post('https:localhost:8080/translations/like', {
+    const res = await axios.post('https:localhost:8080/translations/like', {
         id: id,
         dec: decrement
     })
@@ -22,7 +22,7 @@ export async function addLike(id,decrement){
 }
 // Modify the Dislike
 export async function addDislike(id,decrement){
-    const res = await Axios.post('https:localhost:8080/translations/like', {
+    const res = await axios.post('https:localhost:8080/translations/like', {
         id: id,
         dec: decrement
     })
@@ -30,8 +30,8 @@ export async function addDislike(id,decrement){
 }
 
 // Adds a new translation
-export async function addTranslation(segment,language,translation){
-    const res = await Axios
+export async function addTranslation({segment,language,translation}){
+    const res = await axios
 	.post('http://localhost:8080/translates', {
 		// Data to be sent to the server
 		segment: segment,

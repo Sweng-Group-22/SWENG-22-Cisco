@@ -7,8 +7,8 @@ export default function LikeDislike(props) {
   const [likeActive, setLikeActive] = useState(false)
   const [dislikeActive, setDislikeActive] = useState(false)
 
-  const [likeCount, setLikeCount] = useState(54) // change 54 to initial value of likes when backend is done with this functionality
-  const [dislikeCount, setDislikeCount] = useState(17) // change 17 to initial value of dislikes when backend is done with this functionality
+  const [likeCount, setLikeCount] = useState(props.likes) // change 54 to initial value of likes when backend is done with this functionality
+  const [dislikeCount, setDislikeCount] = useState(props.dislikes) // change 17 to initial value of dislikes when backend is done with this functionality
 
   function likeFunction(){
     if(likeActive){                // unlike

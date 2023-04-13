@@ -13,7 +13,7 @@ export default function Phrase(props) {
             </div>                           {/* Needs to be changed after discussion with backend */}
             
           </div>
-          <div className='translation-like-dislike'><LikeDislike idn={props.idn}/></div>
+          <div className='translation-like-dislike'><LikeDislike idn={props.idn} likes={props.likes} dislikes={props.dislikes}/></div>
         </div>
       </>
     )

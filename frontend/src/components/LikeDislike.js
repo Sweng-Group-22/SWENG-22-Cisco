@@ -48,29 +48,29 @@ export default function LikeDislike(props) {
 
   function setLike() {
     var get = document.getElementById('likeImage' + props.idn);
-    if (get.src.match("https://i.ibb.co/vZ2QnWJ/25297.png")){
-      get.src = "https://i.ibb.co/WggxSHt/Liked-Clr.png";
+    if (get.src.match("https://i.ibb.co/7zxfpf8/SML-Like-Clr.png")){
+      get.src = "https://i.ibb.co/xM6GwxH/SML-Liked-Clr.png";
     }
   }
 
   function unsetLike() {
     var get = document.getElementById('likeImage' +  props.idn);
-    if (get.src.match("https://i.ibb.co/WggxSHt/Liked-Clr.png")){
-      get.src = "https://i.ibb.co/vZ2QnWJ/25297.png";
+    if (get.src.match("https://i.ibb.co/xM6GwxH/SML-Liked-Clr.png")){
+      get.src = "https://i.ibb.co/7zxfpf8/SML-Like-Clr.png";
     }
   }
 
   function setDislike() {
     var get = document.getElementById('dislikeImage' +  props.idn);
-    if (get.src.match("https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png")){
-      get.src = "https://i.ibb.co/QYF4PQ7/Disliked-Clr.png";
+    if (get.src.match("https://i.ibb.co/D5s4WqD/SML-Dislike-Clr.png")){
+      get.src = "https://i.ibb.co/dt9FPHk/SML-Disliked-Clr.png";
     }
   }
 
   function unsetDislike() {
     var get = document.getElementById('dislikeImage' +  props.idn);
-    if (get.src.match("https://i.ibb.co/QYF4PQ7/Disliked-Clr.png")){
-      get.src = "https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png";
+    if (get.src.match("https://i.ibb.co/dt9FPHk/SML-Disliked-Clr.png")){
+      get.src = "https://i.ibb.co/D5s4WqD/SML-Dislike-Clr.png";
     }
   }
 
@@ -79,12 +79,12 @@ export default function LikeDislike(props) {
       <div className='LikeDislike'>
         <div className='like-box'>
       <button className='like' onClick={likeFunction}>
-        <img src="https://i.ibb.co/vZ2QnWJ/25297.png" alt='Thumb up' id = {"likeImage" +  props.idn}/>
+        <img src="https://i.ibb.co/7zxfpf8/SML-Like-Clr.png" alt='Thumb up' id = {"likeImage" +  props.idn}/>
         {likeCount}
       </button>
         
       <button className='dislike' onClick={dislikeFunction}>
-        <img src="https://i.ibb.co/XS6yjNT/output-onlinepngtools-1.png" alt='Thumb down' id = {"dislikeImage" +  props.idn}/>
+        <img src="https://i.ibb.co/D5s4WqD/SML-Dislike-Clr.png" alt='Thumb down' id = {"dislikeImage" +  props.idn}/>
         {dislikeCount}
       </button>
       </div>

@@ -228,40 +228,39 @@ public class RestController {
 	
 	@GetMapping(value="export")
 	public void exp(HttpServletResponse response) {
-		OutputStream out = null;
-		
-		List<Translation> dataList = translationDao.findAll();
-		
-		StringBuilder buf = new StringBuilder();
-		buf.append("Segment").append(CSV_COLUMN_SEPARATOR);
-		buf.append("Accuracy").append(CSV_COLUMN_SEPARATOR);
-		buf.append("EnglishPhrase").append(CSV_COLUMN_SEPARATOR);
-		buf.append("Translation").append(CSV_RN);
-		
-		for(Translation t:dataList) {
-			buf.append(t.getSegment()).append(CSV_COLUMN_SEPARATOR);
-			buf.append(t.getEnglishPhrase()).append(CSV_COLUMN_SEPARATOR);
-//			buf.append(t.getTranslations().get(0)).append(CSV_RN);
-		}
-		
-		try {
-			out = response.getOutputStream();
-			response.reset();
-			response.setContentType("application/x-download");
-			response.setHeader("Content-Disposition", "attachment;filename=data.csv");
-			out.write(buf.toString().getBytes());
-			out.flush();
-		}catch(Exception ex) {
-			ex.printStackTrace();
-		}finally {
-			if(out != null)
-				try {
-					out.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		}
+	    OutputStream out = null;
+	    List<Translation> dataList = translationDao.findAll();
+	    StringBuilder buf = new StringBuilder();
+	    buf.append("Segment").append(CSV_COLUMN_SEPARATOR);
+	    buf.append("DuplicateID").append(CSV_COLUMN_SEPARATOR);
+	    buf.append("EnglishPhrase").append(CSV_COLUMN_SEPARATOR);
+	    buf.append(CSV_RN);
+
+	    for(Translation t : dataList) {
+	        buf.append(t.getSegment()).append(CSV_COLUMN_SEPARATOR);
+	        buf.append(t.getDuplicateID()).append(CSV_COLUMN_SEPARATOR);
+	        buf.append(t.getEnglishPhrase()).append(CSV_COLUMN_SEPARATOR);
+	        buf.append(CSV_RN);
+	    }
+
+	    try {
+	        out = response.getOutputStream();
+	        response.reset();
+	        response.setContentType("text/csv;charset=UTF-8");
+	        response.setHeader("Content-Disposition", "attachment;filename=data.csv");
+	        out.write(buf.toString().getBytes());
+	        out.flush();
+	    } catch(Exception ex) {
+	        ex.printStackTrace();
+	    } finally {
+	        if(out != null) {
+	            try {
+	                out.close();
+	            } catch(IOException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    }
 	}
 
 	@PostMapping(value="import")

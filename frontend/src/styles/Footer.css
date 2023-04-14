@@ -1,12 +1,12 @@
 .container {
-    color: black;
-    background-color: #21d88f;
+    color: white;
+    background-color: rgb(14, 106, 120);
     border-radius: 0px;
     width: 100%;
     position: absolute;
     display: flex;
     flex-direction: column;
-    
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .content {
@@ -14,7 +14,7 @@
 }
 
 .button-group-1 a {
-    color: black;
+    color: white;
     font-size: 30px;
     border: none;
     margin: 5px;
@@ -27,33 +27,46 @@
 
 .twitter:hover {
     color: rgb(29, 161, 242);  
+    cursor: pointer;
 }
 .linkedin:hover {
     color: rgb(0, 119, 181);  
+    cursor: pointer;
 }
 .facebook:hover {
     color: rgb(66, 103, 178);  
+    cursor: pointer;
 }
 .youtube:hover {   
     color: rgb(255, 0, 0); 
+    cursor: pointer;
 }
 .instagram:hover {  
     color: rgb(225, 48, 108); 
+    cursor: pointer;
 }
 
 
 
 .copyright {
-    color: black;
-    margin-right: 130px;
+    color: white;
+    margin-right: 160px;
 }
 
-.button-group-2 button {
-    color: black;
+.copyright:hover {
+    cursor: default;
+}
+
+.button-group-2 a {
+    color: white;
     margin-right: 30px;
     cursor: pointer;
     appearance: auto;
     background-color: inherit; 
     border: none;
+}
+
+.button-group-2:hover a {
+    color: white;
 }
 

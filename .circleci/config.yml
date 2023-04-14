@@ -13,6 +13,10 @@ jobs:
           name: "Gradle Build"
           command: "gradle init build"
 
+    #  - run:
+    #     name: "test"
+    #    command: "gradle test"
+
   frontend:
     docker:
       - image: cimg/node:19.8.1
@@ -22,12 +26,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "test"
-          command: "ls -al"
-
-      - run:
-          name: "Run Frontend Tests (?)"
+          name: "Run Frontend Tests"
           command: "cd frontend && npm i && npm run build"
+
+    #  - run:
+    #     name: "test"
+    #    command: "npm test"
 
 workflows:
   project-workflow:

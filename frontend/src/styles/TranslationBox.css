@@ -1,43 +1,43 @@
-.phrase-box{
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    height: 370px;
-    margin-left: 5%;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    background-color: #21d88f;
+.translation-box{
+    width: 555px;
+    min-height: 220px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: rgb(170, 231, 240);
     padding: 20px;
-    padding-bottom: 50px;
     border-radius: 30px;
 }
 
-.header {
-    color: white;
-    margin-left: 20px;
-    margin-top: 10px;
-}
-
-.phrase-content{
+.translation-content{
     display: flex;
     align-items: center;
     height: 50%;
-    font-size: medium;
+    font-size: 20px;
     color: black;
 }
-.phrase-vertical-line{
-    height: 170px;
+
+.translation-vertical-line{
+    min-height: 120px;
     width: 2px;
     margin-left: 30px;
-    margin-top: 60px;
-    background-color: #1a9f6a;
+    margin-top: 40px;
+    background-color: rgb(102, 199, 214);
 }
-.phrase-translation{
+
+.translation-translation{
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 20px;
+    text-align: left;
+    padding: 5%;
 }
-.phrase-like-dislike{
+
+.translation-like-dislike{
+    margin-left: 10px;
+    margin-right: 5%;
     display: flex;
     justify-content: right;
+    margin-top: 30px;
 }

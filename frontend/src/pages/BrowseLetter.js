@@ -1,24 +1,34 @@
 import React from 'react'
-import AddButton from '../components/AddButton'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 import '../styles/BrowseLetter.css'
-export default function BrowseLetter(Letter) {
-  return (
+import {useQuery} from 'react-query'
+import { searchTranslation } from '../api/Translation'
+
+
+export default function BrowseLetter(props) {
+   const {data} = useQuery(['browse',props.Letter],()=>searchTranslation(props.Letter))
+   console.log(data)
+
+   return (
     <>
         
         <Header/>
-        <div className='browse-letter-box'>
-            <div className='page-letter'>
-              <h1>P</h1>
-            </div>
-            <div className='words'>
-              <Link to='/phrase/phrase1'>Phrase 1</Link>
-              <Link to='/404'>Phrase 2</Link>
-              <Link to='/404'>Phrase 3</Link>
-              <Link to='/404'>Phrase 4</Link>
-            </div>
+        <div class='container1'>
+           <div className='page-letter'>
+              <p>{props.Letter}</p>
+           </div>
+           <div className='browse-letter-box'>
+              <div className='words'>{
+               data?.data.map(listItem =>{
+                  return <Link to={`/phrase/${listItem.englishPhrase}`} onClick={()=>props.setPhrase(listItem)}>{listItem.englishPhrase}</Link>
+               })
+              }
+                   
+                   
+              </div>
+           </div>
         </div>
         <Footer/>
     </>

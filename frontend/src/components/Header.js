@@ -7,7 +7,7 @@ export default function Header(){
   return(
     <> 
       <div class="navbar">
-        <Link to='/'>Translate</Link>
+        <Link to='/'>Home</Link>
           <div class="dropdown">
             <button class="dropbtn">Browse 
               <i class="fa fa-caret-down"></i>
@@ -51,6 +51,7 @@ export default function Header(){
               </div>
             </div>
           </div>
+          <Link to='/phrase/get'>Get Phrases</Link>
 	        {/* <Link to="log">Log In</Link> */}
           <input type="text" placeholder="Search..."/>
         </div>

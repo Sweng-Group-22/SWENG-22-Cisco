@@ -1,5 +1,7 @@
 package com.translation.webex.comp;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -25,4 +27,11 @@ public class TranslationReadWrapper {
         return result;
     }
 	
+	public List<Translation> queryByLetter(String letter) {
+		String value = "^"+letter+".*";
+		Query query = new Query(Criteria.where("englishPhrase").regex(value,"i"));
+        List<Translation> result = mongoTemplate.find(query, Translation.class, COLLECTION_NAME);
+
+        return result;
+	}
 }

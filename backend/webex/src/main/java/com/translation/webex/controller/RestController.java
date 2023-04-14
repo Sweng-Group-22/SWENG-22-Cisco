@@ -152,7 +152,7 @@ public class RestController {
 	    return ret;
 	}
 	
-	@PostMapping(value="translations/search")
+	@GetMapping(value="translations/search")
 	public Object search(@RequestParam("englishPhrase")String englishPhrase) {
 		Map<String,Object> ret = new HashMap();
 		List<Translation> res = translationReadWrapper.queryByLetter(englishPhrase);

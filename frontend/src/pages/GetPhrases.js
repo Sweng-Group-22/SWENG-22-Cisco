@@ -4,8 +4,7 @@ import Footer from '../components/Footer'
 import GetPhrasesBox from '../components/GetPhrasesBox'
 import '../styles/GetPhrases.css'
 import { useState } from 'react'
-import { useQuery } from 'react-query'
-import { getTranslations } from '../api/Translation'
+
 
 export default function GetPhrases() {
 

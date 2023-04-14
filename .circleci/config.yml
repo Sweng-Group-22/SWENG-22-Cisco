@@ -26,6 +26,7 @@ jobs:
     steps:
       - checkout
       - run:
+
           name: "Run Frontend Tests"
           command: "cd frontend && npm i && npm run build"
 

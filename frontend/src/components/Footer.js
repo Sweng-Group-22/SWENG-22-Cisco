@@ -39,23 +39,23 @@ export default function Footer(){
             
             {/*row 2 */}
             <div className='row2'>
-              <div className='copyright'>
+              <a className='copyright'>
                 &copy; {new Date().getFullYear()} Cisco and/or its affiliates. All Rights Reserved.
-              </div>
+              </a>
 
-              <div className='button-group-2'>
-                <a type='button' className='TermsAndConditions' href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html">
+              <a className='button-group-2'>
+                <button type='button' className='TermsAndConditions'>
                   Terms and Conditions
-                </a>
+                </button>
   
-                <a type='button' className='PrivacyStatement' href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html">
+                <button type='button' className='PrivacyStatement'>
                   Privacy Statement
-                </a>
+                </button>
   
-                <a type='button' className='Cookies' href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies">
+                <button type='button' className='Cookies'>
                   Cookies
-                </a>
-              </div>
+                </button>
+              </a>
 
             </div>
           </div>

@@ -6,63 +6,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "vote")
 public class Vote {
-    
-    public int getSegment() {
-		return segment;
-	}
-
-	@Id
-    private ObjectId id;
-    private int segment;
     private String language;
-    private String translation;
-    private int accuracy;
-    private int likes;
-    private int dislikes;
+    private int segment;
+    @Id
+    private ObjectId id;
+    
+    private int duplicateID;
+    private int amountOfVotes;
+    private boolean reachedThreshold;
     
     public Vote() {
     	
     }
-    
-    public Vote(String language){
+    public Vote(String language, int amountOfVotes){
         this.language = language;
+        this.amountOfVotes = amountOfVotes;
     }
-    
-    public String getTranslation() {
-		return translation;
-	}
-	public void setTranslation(String translation) {
-		this.translation = translation;
-	}
-	public void setSegment(int segment) {
-		this.segment = segment;
-	}
 
-    public ObjectId getId() {
-		return id;
-	}
-	public void setId(ObjectId id) {
-		this.id = id;
-	}
-	public int getAccuracy() {
-		return accuracy;
-	}
-	public void setAccuracy(int accuracy) {
-		this.accuracy = accuracy;
-	}
-	public int getLikes() {
-		return likes;
-	}
-	public void setLikes(int likes) {
-		this.likes = likes;
-	}
-	public int getDislikes() {
-		return dislikes;
-	}
-	public void setDislikes(int dislikes) {
-		this.dislikes = dislikes;
-	}
-	public String getLanguage() {
+    public String getLanguage() {
         return language;
     }
 
@@ -70,4 +31,27 @@ public class Vote {
         this.language = language;
     }
 
+    public int getSegment() {
+        return segment;
+    }
+
+    public void setSegment(int segment) {
+        this.segment = segment;
+    }
+
+    public int getDuplicateID() {
+        return duplicateID;
+    }
+
+    public void setDuplicateID(int duplicateID) {
+        this.duplicateID = duplicateID;
+    }
+
+    public int getAmountOfVotes() {
+        return amountOfVotes;
+    }
+
+    public void setAmountOfVotes(int amountOfVotes) {
+        this.amountOfVotes = amountOfVotes;
+    }
 }

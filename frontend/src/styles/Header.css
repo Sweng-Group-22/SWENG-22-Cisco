@@ -1,6 +1,6 @@
 .navbar {
   overflow: hidden;
-  background-color: rgb(102, 199, 214);
+  background-color: #21d88f;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -10,23 +10,23 @@
   color: black;
   margin-top: 24px;
   text-align: center;
-  padding: 20px 16px;
+  padding: 14px 16px;
   text-decoration: none;
-} 
+}
 
 .navbar b {
   float: left;
   font-size: 40px;
   color: black;
   text-align: center;
-  padding: 20px 16px;
+  padding: 14px 16px;
   text-decoration: none;
 }
 
 .dropdown {
   float: left;
   overflow: hidden;
-  margin-top:30px;
+  margin-top:24px;
 }
 
 .dropdown .dropbtn {
@@ -42,7 +42,6 @@
 
 .navbar a:hover, .dropdown:hover .dropbtn {
   color: white;
-  cursor: pointer;
 }
 
 .dropdown-content {
@@ -62,14 +61,13 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
-  cursor: pointer;
 }
 
 .column {
   float: left;
   width: 25;
   padding: 10px;
-  background-color: rgb(219, 246, 250);
+  background-color: #ccc;
   height: 400px;
 }
 
@@ -85,8 +83,7 @@
 }
 
 .column a:hover {
-  background-color: rgb(170, 231, 240);
-  cursor: pointer;
+  background-color: #ddd;
 }
 
 .row:after {

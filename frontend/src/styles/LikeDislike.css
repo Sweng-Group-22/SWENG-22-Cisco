@@ -1,20 +1,18 @@
 img{
-    width: 25px;
-    height: 25px;
+    width: 70px;
+    height: 70px;
 }
 
 .like-box {
-    display: flex;
-    width: 160px;
-    height: 45px;
+    width: 280px;
+    height: 110px;
     border-radius: 30px;
-    background-color: rgb(219, 246, 250);
+    background-color: #cdfae4;
 }
 
 .like {
     border: none;
-    margin: 10px;
-    margin-right: 8px;
+    margin: 20px;
     cursor: pointer;
     appearance: auto;
     background-color: inherit; 
@@ -28,8 +26,7 @@ img{
 
 .dislike {
     border: none;
-    margin: 10px;
-    margin-left: 8px;
+    margin: 20px;
     cursor: pointer;
     appearance: auto;
     background-color: inherit; 

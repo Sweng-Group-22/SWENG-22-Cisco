@@ -2,18 +2,21 @@ import React from 'react'
 import '../styles/TranslationBox.css'
 import LikeDislike from '../components/LikeDislike'
 
-export default function Phrase(props) {
+export default function Phrase() {
     return (
       <>
-        <div className='translation-box'>
-          <div className='translation-content'>
-            <div className='translation-vertical-line'></div> 
-            <div className='translation-translation'>
-              {props.Translation}
-            </div>                           {/* Needs to be changed after discussion with backend */}
-            
+        <div className='phrase-box'>
+          <div class='header'>
+            <h1>Translated phrase</h1>   {/* Needs to be changed after discussion with backend */}
           </div>
-          <div className='translation-like-dislike'><LikeDislike idn={props.idn} likes={props.likes} dislikes={props.dislikes}/></div>
+          <div className='phrase-content'>
+            <div className='phrase-vertical-line'></div>
+            <div className='phrase-translation'>
+              Amet nisl suscipit adipiscing bibendum est ultricies 
+              integer quis auctor elit sed vulputate mi sit amet mauris.
+            </div>                           {/* Needs to be changed after discussion with backend */}
+          </div>
+          <div className='phrase-like-dislike'><LikeDislike/></div>
         </div>
       </>
     )

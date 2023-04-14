@@ -1,32 +1,19 @@
-.container1 {
-    display:flex;
-}
-
 .browse-letter-box{
-    margin-left: 150px;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    min-height: 550px;
-    width: 850px;
-    background-color: rgb(170, 231, 240);
-    border-radius: 30px;
+    
+    
+    margin: 50px;
+    height: 800px;
+    min-width: 1000px;
+    background-color: #21d88f;
     
 }
 .page-letter{
-    margin-left: 230px;
-    margin-top: 10px;
-    margin-bottom:80px;
-    font-size: 200px;
-    color: rgb(14, 106, 120);
-    font-family: 'Lucida Console', 'Andale Mono', 'Monaco', monospace;
+    margin-left: 20px;
 }
 .words{
-    margin: 50px;
+    margin: 10px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding:4px;
+    justify-content: space-around;
     font-size: 24px;
     font-weight: 600;
-    color: rgb(14, 106, 120);
 }

@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 import Modal from './Modal';
 
 export default function GetPhrasesBox(props) {
-  const {data} = useQuery(['browse',props.EnglishPhrase],()=>searchTranslation(props.EnglishPhrase))
-  console.log(data)
   
   return (
     <>
@@ -18,7 +16,7 @@ export default function GetPhrasesBox(props) {
           <div className='get-phrases-box-view-suggest'>
 
             <div className='get-phrases-box-view'>
-              <Link style={{textDecoration: 'none'}} class='view' to={`/phrase/${props.EnglishPhrase}`} onClick={()=>props.setPhrase(data[0])}>View existing translations</Link>
+              <Link style={{textDecoration: 'none'}} class='view' to='/phrase/phrase1'>View existing translations</Link>
             </div>
 
             <div className='get-phrases-box-suggest' onClick={props.showModal}>

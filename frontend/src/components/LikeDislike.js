@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import '../styles/LikeDislike.css'
-
+import { addLike, addDislike } from '../api/Translation'
 
 export default function LikeDislike(props) {
 
